@@ -61,13 +61,6 @@
 
 \underline{\textbf{Третья глава}} посвящена исследованию
 
-Можно сослаться на свои работы в автореферате. Для этого в файле
-\verb!Synopsis/setup.tex! необходимо присвоить положительное значение
-счётчику \verb!\setcounter{usefootcite}{1}!. В таком случае ссылки на
-работы других авторов будут подстрочными.
-Изложенные в третьей главе результаты опубликованы в~\cite{vakbib1, vakbib2}.
-Использование подстрочных ссылок внутри таблиц может вызывать проблемы.
-
 В \underline{\textbf{четвертой главе}} приведено описание
 
 \FloatBarrier
@@ -93,39 +86,14 @@
     %  * Если не соблюдать порядок "как для \printbibliography", нумерация в `\insertbiblioauthor` будет кривой.
     %  * Если цитировать каждый источник отдельной командой --- найти некоторые ошибки будет проще.
     %
-    %% authorvak
-    \nocite{vakbib1}%
-    \nocite{vakbib2}%
-    \nocite{vakbib3}%
-    \nocite{vakbib4}%
-    \nocite{vakbib5}%
-    \nocite{vakbib6}%
-    \nocite{vakbib7}%
-    \nocite{vakbib8}%
-    \nocite{vakbib9}%
-    \nocite{vakbib10}%
-    \nocite{vakbib11}%
-    \nocite{vakbib12}%
-    %
-    %% authorwos
-    \nocite{wosbib1}%
+
     %
     %% authorscopus
-    \nocite{scbib1}%
-    %
-    %% authorpatent
-    \nocite{patbib1}%
-    %
-    %% authorprogram
-    \nocite{progbib1}%
-    %
-    %% authorconf
-    \nocite{confbib1}%
-    \nocite{confbib2}%
-    %
-    %% authorother
-    \nocite{bib1}%
-    \nocite{bib2}%
+    \nocite{Kulagin2022a}%
+    \nocite{Kulagin2022b}%
+    \nocite{Kulagin2023}%
+    \nocite{Kulagin2024}%
+    \nocite{Kulagin2025}% 
 
     \ifnumgreater{\value{usefootcite}}{0}{
         \begin{refcontext}[labelprefix={}]
