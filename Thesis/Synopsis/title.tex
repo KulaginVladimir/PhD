@@ -1,19 +1,23 @@
 \thispagestyle{empty}
 
+\begin{center}
+    \thesisOrganizationShort
+\end{center}
+
 \noindent%
 \begin{tabularx}{\textwidth}{@{}lXr@{}}%
     & & \large{На правах рукописи}\\
-    \IfFileExists{images/logo.pdf}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}}  & &
+    \IfFileExists{images/logo}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}}  & &
     \ifnumequal{\value{showperssign}}{0}{%
         \rule[0pt]{0pt}{1.5cm}
     }{
-        \includegraphics[height=1.5cm]{personal-signature.png}
+        %\includegraphics[height=1.5cm]{personal-signature.png}
     }\\
 \end{tabularx}
 
 \vspace{0pt plus1fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 \begin{center}
-\textbf {\large \thesisAuthor}
+\textbf {\Large \thesisAuthor}
 \end{center}
 
 \vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
@@ -22,7 +26,7 @@
 \thesisTitle}
 
 \vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-{\large Специальность \thesisSpecialtyNumber\ "---\par <<\thesisSpecialtyTitle>>}
+{\large Специальность \thesisSpecialtyNumber\ "--- <<\thesisSpecialtyTitle>>}
 
 \ifdefined\thesisSpecialtyTwoNumber
 {\large Специальность \thesisSpecialtyTwoNumber\ "---\par <<\thesisSpecialtyTwoTitle>>}
