@@ -1,5 +1,40 @@
-\chapter{Методы численного моделирования накопления изотопов водорода в ОПЭ}\label{ch:ch2}
+\chapter{Методика анализа динамики транспорта дейтерия в вольфраме}\label{ch:ch2}
 
-\section{Одиночное изображение}\label{sec:ch2/sec1}
+\section{Модель транспорта изотопов водорода в материалах}\label{sec:ch2/sec1}
+\subsection{Объемные процессы}\label{sec:ch2/sec1/subsec1}
+
+\subsubsection{Транспорт водорода}\label{sec:ch2/sec1/subsec1/subsubsec1}
+
+\begin{subequations}
+    \label{eq:ch2/hydrogen_transport}
+    \begin{align}
+        \frac{\partial \cm}{\partial t} & = \nabla \cdot \left( D \nabla \cm \right) - \sum \limits_i \frac{\partial \cti}{\partial t} + \sum \limits_j S_j, \label{eq:ch2/mobile_conc} \\
+        \frac{\partial \cti}{\partial t} & = k_i \cm (n_i - \cti) - p_i \cti, \label{eq:ch2/trapped_conc} 
+    \end{align}     
+\end{subequations}
+  
+Уравнения \cref{eq:ch2/mobile_conc,eq:ch2/trapped_conc} в системе \eqref{eq:ch2/hydrogen_transport}
+
+
+\subsubsection{Перенос тепла}\label{sec:ch2/sec1/subsec1/subsubsec2}
+
+\begin{equation}
+    C \rho \frac{\partial T}{ \partial t} = \nabla \cdot \left( \kappa \nabla T \right) + \sum \limits_i Q_i
+\end{equation}
+
+
+\subsection{Поверхностные процессы}\label{sec:ch2/sec1/subsec2}
+
+\section{Программный пакет FESTIM}\label{sec:ch2/sec2}
+
+\section{Реализация нульмерной модели, учитывающей поверхностные процессы, в программном пакете FESTIM}\label{sec:ch2/sec3}
+\subsection{Верификация модели}\label{sec:ch2/sec3/subsec1}
+\subsection{Валидация модели}\label{sec:ch2/sec3/subsec2}
+\subsubsection{Эксперимент по абсорбция протия в титане}\label{sec:ch2/sec3/subsec2/subsubsec1}
+\subsubsection{Эксперимент по адсорбция дейтерия на поверхности оксидированного вольфрама}\label{sec:ch2/sec3/subsec2/subsubsec2}
+\subsubsection{Эксперимент по облучению вольфрама низкоэнергетичными атомами дейтерия}\label{sec:ch2/sec2/subsec3/subsubsec3}
+\subsubsection{Эксперимент по облучению стали EUROFER ионами дейтерия}\label{sec:ch2/sec2/subsec/subsubsec4}
+
+\section{\fixme{Выводы к Главе~\ref{ch:ch2}}}
 
 \FloatBarrier

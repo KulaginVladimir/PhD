@@ -5,9 +5,12 @@
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=false}}{} % не рекомендуется применять пакет микротипографики к автоматически генерируемому списку литературы
 % \insertbibliofull                           % Подключаем Bib-базы: все статьи единым списком
 % Режим с подсписками
+\begin{refcontext}[labelprefix=A]
+    \insertbiblioauthor
+\end{refcontext}                        % Подключаем Bib-базы: работы автора единым списком 
 \insertbiblioexternal                      % Подключаем Bib-базы: статьи, не являющиеся статьями автора по теме диссертации
 % Для вывода выберите и расскомментируйте одно из двух
-\insertbiblioauthor                        % Подключаем Bib-базы: работы автора единым списком 
+
 %\insertbiblioauthorgrouped                 % Подключаем Bib-базы: работы автора сгруппированные (ВАК, WoS, Scopus и т.д.)
 \ifdefmacro{\microtypesetup}{\microtypesetup{protrusion=true}}{}
 \urlstyle{tt}                               % возвращаем установки шрифта ссылок URL

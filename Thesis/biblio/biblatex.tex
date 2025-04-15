@@ -14,7 +14,7 @@ autolang=other,% многоязычная библиография
 clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
 defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
 sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
-doi=false,% Показывать или нет ссылки на DOI
+doi=true,% Показывать или нет ссылки на DOI
 isbn=false,% Показывать или нет ISBN, ISSN, ISRN
 ]{biblatex}[2016/09/17]
 \ltx@iffilelater{biblatex-gost.def}{2017/05/03}%
@@ -561,6 +561,7 @@ sorting=none,% настройка сортировки списка литера
 
 \defbibheading{nobibheading}{} % пустой заголовок, для подсчёта публикаций с помощью невидимой библиографии
 \defbibheading{pubgroup}{\section*{#1}} % обычный стиль, заголовок-секция
+\defbibheading{fullheading}{\chapter*{\centerline{#1}}\addcontentsline{toc}{chapter}{#1}}
 \defbibheading{pubsubgroup}{\noindent\textbf{#1}} % для подразделов "по типу источника"
 
 %%%Сортировка списка литературы Русский-Английский (предварительно удалить dissertation.bbl) (начало)
@@ -606,7 +607,11 @@ sorting=none,% настройка сортировки списка литера
     }{}
 }
 \newcommand*{\insertbiblioauthor}{
-    \printbibliography[heading=pubgroup, section=0, filter=papersregistered, title=\bibtitleauthor]
+    \ifsynopsis
+        \printbibliography[heading=pubgroup, section=0, filter=papersregistered, title=\bibtitleauthor]
+    \else
+        \printbibliography[heading=fullheading, section=0, filter=papersregistered, title=\bibtitleauthor]
+    \fi
 }
 \newcommand*{\insertbiblioauthorimportant}{
     \printbibliography[heading=pubgroup, section=2, filter=papersregistered, title=\bibtitleauthorimportant]
@@ -630,5 +635,10 @@ sorting=none,% настройка сортировки списка литера
 }
 
 \newcommand*{\insertbiblioexternal}{
-    \printbibliography[heading=pubgroup,    section=0, keyword=biblioexternal,     title=\bibtitlefull]
+    \ifsynopsis
+        \printbibliography[heading=pubgroup, section=0, keyword=biblioexternal, title=\bibtitlefull]
+    \else
+        \printbibliography[heading=fullheading, keyword=biblioexternal, section=0, title=\bibtitlefull, resetnumbers=true]
+        \printbibliography[heading=nobibheading, env=counter, keyword=biblioexternal, section=0]
+    \fi
 }
