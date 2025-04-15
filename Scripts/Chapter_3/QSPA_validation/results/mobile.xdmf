@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Xdmf Version="3.0">
+  <Domain>
+    <Grid GridType="Collection" CollectionType="Temporal" Name="mobile">
+      <Grid Name="mobile_0" GridType="Uniform">
+        <Topology NumberOfElements="2196" TopologyType="PolyLine" NodesPerElement="2">
+          <DataItem Dimensions="2196 2" NumberType="UInt" Format="HDF">mobile.h5:mobile/mobile_0/mesh/topology</DataItem>
+        </Topology>
+        <Geometry GeometryType="XY">
+          <DataItem Dimensions="2197 2" Format="HDF">mobile.h5:mobile/mobile_0/mesh/geometry</DataItem>
+        </Geometry>
+        <Time Value="100000.000000" />
+        <Attribute ItemType="FiniteElementFunction" ElementFamily="CG" ElementDegree="1" ElementCell="interval" Name="mobile" Center="Other" AttributeType="Scalar">
+          <DataItem Dimensions="4392 1" NumberType="UInt" Format="HDF">mobile.h5:mobile/mobile_0/cell_dofs</DataItem>
+          <DataItem Dimensions="10982 1" NumberType="Float" Format="HDF">mobile.h5:mobile/mobile_0/vector</DataItem>
+          <DataItem Dimensions="2197 1" NumberType="UInt" Format="HDF">mobile.h5:mobile/mobile_0/x_cell_dofs</DataItem>
+          <DataItem Dimensions="2196 1" NumberType="UInt" Format="HDF">mobile.h5:mobile/mobile_0/cells</DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+  </Domain>
+</Xdmf>
