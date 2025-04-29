@@ -15,7 +15,7 @@
 \captionsetup[table]{
         format=\tabformat,                % формат подписи (plain|hang)
         font=normal,                      % нормальные размер, цвет, стиль шрифта
-        skip=.0pt,                        % отбивка под подписью
+        skip=10pt,                        % отбивка под подписью
         parskip=.0pt,                     % отбивка между параграфами подписи
         position=above,                   % положение подписи
         justification=\tabjust,           % центровка
@@ -30,7 +30,7 @@
 \captionsetup[figure]{
         format=plain,                     % формат подписи (plain|hang)
         font=normal,                      % нормальные размер, цвет, стиль шрифта
-        skip=.0pt,                        % отбивка под подписью
+        skip=10pt,                        % отбивка под подписью
         parskip=.0pt,                     % отбивка между параграфами подписи
         position=below,                   % положение подписи
         singlelinecheck=true,             % выравнивание по центру, если умещается в одну строку
@@ -293,3 +293,14 @@
         \newrobustcmd{\note}[2][]{}
         \excludecomment{commentbox}
 }
+
+\newcommand{\leftrarrows}{\mathrel{\raise.75ex\hbox{\oalign{%
+  $\scriptstyle\leftarrow$\cr
+  \vrule width0pt height.5ex$\hfil\scriptstyle\relbar$\cr}}}}
+\newcommand{\lrightarrows}{\mathrel{\raise.75ex\hbox{\oalign{%
+  $\scriptstyle\relbar$\hfil\cr
+  $\scriptstyle\vrule width0pt height.5ex\smash\rightarrow$\cr}}}}
+\newcommand{\Rrelbar}{\mathrel{\raise.75ex\hbox{\oalign{%
+  $\scriptstyle\relbar$\cr
+  \vrule width0pt height.5ex$\scriptstyle\relbar$}}}}
+\newcommand{\longleftrightarrows}{\leftrarrows\joinrel\Rrelbar\joinrel\lrightarrows}
