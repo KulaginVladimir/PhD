@@ -60,8 +60,6 @@
 %%% Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
 \include{Dissertation/title}           % Титульный лист
 
-    
-
 \include{Dissertation/contents}        % Оглавление
 \ifnumequal{\value{contnumfig}}{1}{}{\counterwithout{figure}{chapter}}
 \ifnumequal{\value{contnumtab}}{1}{}{\counterwithout{table}{chapter}}
@@ -72,7 +70,7 @@
 }{\counterwithin{table}{chapter}}
 %\include{Dissertation/part1}           % Глава 1
 %\include{Dissertation/part2}           % Глава 2
-%\include{Dissertation/part3}           % Глава 3
+\include{Dissertation/part3}           % Глава 3
 \include{Dissertation/part4}           % Глава 4
 \include{Dissertation/conclusion}      % Заключение
 \include{Dissertation/acronyms}        % Список сокращений и условных обозначений
