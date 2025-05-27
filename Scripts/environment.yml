@@ -14,3 +14,4 @@ dependencies:
   - pip:
       - git+https://github.com/festim-dev/FESTIM@79d8fa7
       - h-transport-materials
+      - pypalettes

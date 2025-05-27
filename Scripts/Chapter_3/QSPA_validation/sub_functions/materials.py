@@ -94,13 +94,15 @@ class W(Material):
                     + 1.075862e-9 * T**3
                 ) / self.M
         else:
-            return (
+            Cp_below_3080 = (
                 21.868372
                 + 8.068661e-3 * T
                 - 3.756196e-6 * T**2
                 + 1.075862e-9 * T**3
                 + 1.406637e4 / (T + 1.0) ** 2
             ) / self.M
+            Cp_above_3080 = (2.022 + 1.315e-2 * T) / self.M
+            return f.conditional(T <= 3080, Cp_below_3080, Cp_above_3080)
 
     def heat_of_transport_function(self, T):
         # Temperature dependence of the Soret coefficient in eV
