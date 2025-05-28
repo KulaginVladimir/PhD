@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+authors:
+- family-names: "Kulagin"
+  given-names: "Vladimir"
+  orcid: "https://orcid.org/0000-0002-1692-9995"
+title: "PhD"
+version: 1.0.0
+date-released: 2025-05-28
+url: "https://github.com/KulaginVladimir/PhD"
