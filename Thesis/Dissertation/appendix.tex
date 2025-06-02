@@ -269,7 +269,7 @@
             \hline
             Концентрация атомов решетки,~\si{\per\meter\cubed}                                               & $n_\mathrm{W}$         & \num{6.310e28}              \\
             Концентрация межузельных положений,~\si{\per\meter\cubed}                                        & $n_\mathrm{IS}$        & \num{3.786e29}              \\
-            Концентрация адсорбционных положений ,~\si{\per\meter\squared}                                   & $n_\mathrm{s}$         & \num{1.997e19}              \\
+            Концентрация адсорбционных положений,~\si{\per\meter\squared}                                    & $n_\mathrm{s}$         & \num{1.997e19}              \\
             Расстояние между межузельными положениями,~\si{\meter}                                           & $\lambda_\mathrm{IS}$  & \num{1.100e-10}             \\
             Расстояние между межузельным и адсорбционным положениями,~\si{\meter}                            & $\lambda_\mathrm{abs}$ & \num{5.275e-11}             \\
             Предэкспоненциальный множитель коэффициента диффузии,~\si{\meter\squared\per\second}             & $D_0$                  & \num{1.365e-7}              \\
@@ -290,6 +290,7 @@
     \end{threeparttable}
 \end{table}
 
+\begin{comment}
 \begin{table}[ht]
     \centering
     \begin{threeparttable}
@@ -318,6 +319,7 @@
         \end{tabularx}
     \end{threeparttable}
 \end{table}
+\end{comment}
 
 \chapter{Параметры, определяющие температурную зависимость потока тепла через границу раздела W-Cu}\label{app:D}
 
@@ -359,7 +361,7 @@
 
 \chapter{Решение стационарного уравнения диффузии с учетом градиента температуры}\label{app:E}
 
-Рассмотрим стационарное уравнения диффузии с известным распределением температуры ($\partial_x T \neq 0$), определенное на отрезке \( x \in [0, L] \). На левой границе зададим однородное граничное условие Дирихле, когда на правой рассмотрим два случая: однородное условие Дирихле и однородное условие Неймана. Сначала обобщим уравнение~\eqref{eq:solute_analytic} на случай $k$ источников:
+Рассмотрим стационарное уравнение диффузии с известным распределением температуры ($\partial_x T \neq 0$), определенное на отрезке \( x \in [0, L] \). На левой границе зададим однородное граничное условие Дирихле, когда на правой рассмотрим два случая: однородное условие Дирихле и однородное условие Неймана. Сначала обобщим уравнение~\eqref{eq:ch3/eq:solute_analytic} на случай $k$ источников:
 \begin{align}
 	\label{eq:general_stat_dif}
 	\begin{cases}
@@ -372,7 +374,7 @@
 		\right.
 	\end{cases}
 \end{align}
-По сравнению с уравнением.~\eqref{eq:solute_analytic}, обозначения сокращены для краткости. Уравнение диффузии может быть сведено к:
+По сравнению с уравнением.~\eqref{eq:ch3/eq:solute_analytic}, обозначения сокращены для краткости. Уравнение диффузии может быть сведено к:
 \begin{equation}
 	\frac{\partial}{\partial x}\left(p(x)\frac{\partial}{\partial x}\left[ ce^{\int\limits_0^x H(T)d\chi}\right]\right)=-\sum\limits_{i=1}^k S_i(x),
 \end{equation}
@@ -394,11 +396,11 @@
 	\end{cases}
 \end{align}
 где \( \delta(x) \) "--- дельта-функция Дирака. В особой точке выполняются свойства функции Грина краевой задачи:
-\begin{align}
+\begin{gather}
 	\label{eq:Green_problem_connect}
 	 \left.G(x,y)\right\vert_{x=y^+}=\left.G(x,y)\right\vert_{x=y^-},                                                                                   \\
 	 \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^+}-\left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^-}=-1.\nonumber
-\end{align}
+\end{gather}
 
 Для обоих типов условий на правой границе функция Грина может быть выражена следующим образом:
 \begin{subequations}
@@ -435,3 +437,62 @@
 \begin{align}
 	c= & e^{-\int\limits_0^x H(T)d\chi}\,\sum\limits_{i=1}^k \left( \int\limits_0^x G_2(x,y)S_i(y)dy + \int\limits_x^L G_1(x,y)S_i(y)dy \right).\nonumber
 \end{align}
+
+\chapter{Решение уравнения теплопроводности на полубесконечной прямой}\label{app:F}
+
+Уравнение теплопроводности, определяемое на полубесконечной прямой, описывается следующим образом:
+\begin{align}
+	\label{eq:heat_transfer_semiinfinite}
+	\begin{cases}
+		\dfrac{\partial T}{\partial t} & = a^2 \dfrac{\partial^2 T}{\partial x^2}, \\[5pt]
+		\left.\dfrac{\partial T}{\partial x}\right\vert_{x=0}& = -\dfrac{q(t)}{\kappa},                \\[5pt]
+        \left. T \right\vert_{t=0} & = T_0,
+	\end{cases}
+\end{align}
+где \( a = \sqrt{\kappa/C_p\rho} \) "--- температуропроводность. Дифференциальное уравнение в частных производных определено на области \( x \geq 0 \). Тепловые свойства материала предполагаются не зависящими от температуры. Известно, что функция Грина для системы~\cref{eq:heat_transfer_semiinfinite} и изменение температуры за счет плотности потока на границе равны~\cite{Bechtel1975}:
+\begin{subequations}
+    \begin{gather}
+        G(x,t|x',t') = \frac{1}{2a\sqrt{\pi(t-t')}} \left[ \exp \left( -\frac{(x-x')^2}{4a^2(t-t')} \right) + \exp \left( -\frac{(x+x')^2}{4a^2(t-t')} \right) \right],\label{eq:heat_eq_Green}\\
+        T(x,t)-T_0 \equiv \Delta T(x,t) = \frac{a^2}{\kappa} \int\limits_0^t G(x,t|0,t')q(t')dt'. \label{eq:deltaT}
+    \end{gather}
+\end{subequations}
+Подставляя функцию Грина~\cref{eq:heat_eq_Green} в уравнение~\cref{eq:deltaT} и полагая \(x=0\), приходим к выражению для временной эволюции изменения температуры поверхности:
+\begin{equation}
+    \Delta T(0,t) = \frac{1}{\sqrt{\pi\kappa C_p \rho}} \int\limits_0^t \frac{q(t')}{\sqrt{t-t'}}dt'.
+\end{equation}
+
+Для использованных временных профилей лазерных импульсов интеграл может быть сведен к табулированным трансцендентным функциям. Временной профиль при наносекундном нагреве явно задавался в соответствии с распределением Гаусса:
+\begin{equation}
+    q_\mathrm{ns}=\frac{E_0}{\sqrt{2\pi}\sigma_\tau} \exp \left( -\frac{(t-t_0)^2}{2\sigma_\tau^2} \right).
+\end{equation} 
+Повышение температуры поверхности при такой нагрузке~\cite{Bechtel1975}:
+\begin{equation}
+    \label{eq:dT_ns}
+    \Delta T_\mathrm{ns}(0,t) = \frac{E_0}{\sqrt{2\pi\sigma_\tau \kappa C_p \rho}} \exp \left( -\frac{z^2}{4} \right) D_{-1/2}(-z),
+\end{equation}
+где \( z = (t-t_0)/\sigma_\tau \), \(D_{-1/2}(x) \) "--- функция параболического цилиндра. Дифференцируя выражение~\cref{eq:dT_ns}, можно показать, что максимальная температура поверхности достигается при \( t_\mathrm{ns}^{\max} \approx t_0 + \num{0.765}\sigma_\tau \), а ее значение, выраженное через полуширину профиля нагрузки (\(\tau_\mathrm{ns}\)), составляет:
+\begin{equation}
+    \Delta T_\mathrm{ns}(0, t_\mathrm{ns}^{\max}) \approx \num{0.783} \, \frac{2E_0}{\sqrt{\pi \tau_\mathrm{ns} \kappa C_p \rho}}.
+\end{equation} 
+
+Для трапециевидного временного профиля (уравнения~\cref{eq:ch3/pulse_form}) временная эволюция изменения температуры поверхности определяется следующей совокупностью выражений:
+\begin{subequations}
+    \label{eq:dT_usms}
+    \begin{align}
+        \Delta T_\mathrm{i}(0,t) & = \dfrac{2E_0}{\sqrt{\pi\tau_i \kappa C_p \rho}} h(t), \\
+        h(t) & = 
+        \begin{cases}
+            \begin{alignedat}{3}
+            h_1(t) = &\sqrt{\dfrac{t}{\tau_i}} - \sqrt{\dfrac{\tau_\mathrm{le}}{\tau_i}} F\left( \sqrt{\dfrac{t}{\tau_\mathrm{le}}} \right), & 0 \leq t \leq t_1, \\
+            h_2(t) = &h_1(t) + \sqrt{\dfrac{\tau_\mathrm{le}}{\tau_i}} \exp \left( -\dfrac{t_1}{\tau_\mathrm{le}} \right) F\left( \sqrt{\dfrac{t-t_1}{\tau_\mathrm{le}}} \right) + &\\
+            &+ \sqrt{\dfrac{t-t_1}{\tau_i}} \left[ w_1(t_1) \left( 1+\dfrac{2\Delta}{3}\, \dfrac{t-t_1}{t_2-t_1} \right) -1 \right], & t_1 < t \leq t_2, \\
+            h_3(t) =& h_2(t) + w_2(t_2) \sqrt{\dfrac{\tau_\mathrm{te}}{\tau_i}} F\left( \sqrt{\dfrac{t-t_2}{\tau_\mathrm{te}}} \right) - & \\
+            &- w_1(t_1) \sqrt{\dfrac{t-t_2}{\tau_i}} \left[ \dfrac{\Delta}{3} \left( 1 + 2 \dfrac{t-t_1}{t_2-t_1} \right) + 1 \right], & t>t_2, 
+        \end{alignedat}
+        \end{cases}
+    \end{align}
+\end{subequations}
+где \( F(x) \) "--- интеграл Доусона; индекс \(i\) соответствует случаю микросекундного или миллисекундного нагрева. Для параметров импульсов, использованных в настоящей работе, максимальная температура поверхности достигается при \( t_i^{\max} = t_2 \) и ее значение определяется функцией \(h_2(t_2) \):
+\begin{equation}
+    \Delta T_i^{\max}(0,t_2) \approx \num{0.863} \, \frac{2E_0}{\sqrt{\pi \tau_i \kappa C_p \rho}}.
+\end{equation}
