@@ -18,6 +18,7 @@
 \end{subequations}
 где \( T \) "--- температура, \si{\kelvin}; \( M_\mathrm{W}=\SI{183.84e-3}{\kilogram\per\mole} \) "--- молярная масса вольфрама.
 
+\begin{comment}
 Для бериллия использовались функциональные зависимости, рекомендованные Толиасом~\cite{Tolias2022} на основе критического анализа литературных данных. Изменением теплофизических свойств при переходе из альфа- в бета-фазу пренебрегалось:
 \begin{subequations}
     \label{eq:app/Be_props}
@@ -28,6 +29,7 @@
     \end{align}
 \end{subequations}
 где \( M_\mathrm{Be}=\SI{9.012e-3}{\kilogram\per\mole} \) "--- молярная масса бериллия.
+\end{comment}
 
 Функциональные зависимости для меди и сплава бронзы (CuCrZr) были выбраны на основе работы Ван ден Керкхофа и др.~\cite{VandenKerkhof2021}, которые получили аналитические зависимости на основе данных из внутреннего отчета Международной организации ИТЭР~\cite{komarov2013thermal}. Зависимости для меди определены следующим образом:
 \begin{subequations}
@@ -254,7 +256,7 @@
     \end{threeparttable}
 \end{table}
 
-\chapter{Физические параметры, использованные для моделирования транспорта дейтерия в вольфраме и бериллии}\label{app:C}
+\chapter{Физические параметры, использованные для моделирования транспорта дейтерия в вольфраме}\label{app:C}
 
 \begin{table}[ht]
     \centering
@@ -329,7 +331,7 @@
     \rotatebox{270}{
     \begin{minipage}{0.9\textwidth}
         \small
-        \caption{Свободные параметры в уравнениях~\cref{eq:ch3/heat_WCu}} \label{tab:fit_params}
+        \caption{Подгоночные параметры в уравнениях~\cref{eq:ch3/heat_WCu}} \label{tab:fit_params}
         \begin{threeparttable}
             \begin{tabular}{*{13}c}
                 \toprule
