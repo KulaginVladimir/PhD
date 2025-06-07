@@ -33,7 +33,8 @@ This will set up a Conda environment named `PhD-env` with all the required depen
 > Some scripts for chapters 3 & 4 were ran on HPC with Slurm Workload Manager. Each subfolder includes the HPC scripts. An example on how to perform a sequential series of simulations is given in this [book](./Scripts/Chapter_4/LID_simulation/LID.ipynb)
 > For any queries, contact: VVKulagin@mephi.ru
 
-Navigate to the desired folder and run the Jupyter books using the activated Conda environment. The archive with the raw data can be accessed via Zenodo:
+Navigate to the desired folder and run the Jupyter books using the activated Conda environment. The archive with the raw data can be accessed via Zenodo.
+
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14036908.svg)](https://doi.org/10.5281/zenodo.15614480)
 
 > [!NOTE]  
