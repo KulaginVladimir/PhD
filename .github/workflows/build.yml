@@ -1,5 +1,5 @@
 name: Build LaTeX document and release PDF
-on: [pull_request, push]
+on: release
 
 jobs:
   build:
@@ -16,15 +16,15 @@ jobs:
       - name: Compile dissertation
         run: |
           cd ./Thesis
-          make synopsis
+          make dissertation
 
       - name: Move PDF
-        run: mkdir -p github_artifacts && mv ./Thesis/synopsis.pdf ./github_artifacts/
+        run: mkdir -p github_artifacts && mv ./Thesis/dissertation.pdf ./github_artifacts/
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: synopsis.pdf
+          name: dissertation.pdf
           path: ./github_artifacts
 
   deploy:
