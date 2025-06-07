@@ -1,4 +1,7 @@
-Source files to reproduces the main results of the PhD Thesis entitled **Simulation of deuterium retention and desorption processes in tungsten under impulse plasma and laser impact**.
+## Overview
+Source files to reproduces the main results of the PhD thesis entitled **Modelling of deuterium retention and desorption processes in tungsten under pulsed plasma and laser impact**.
+
+### [![Latest PDF](https://img.shields.io/static/v1?label=PDF&logo=adobeacrobatreader&message=see%20latest%20version&color=success)](../../blob/compiledPDF/dissertation.pdf)
 
 ## Structure
 * [Thesis](Thesis): Thesis and annotation. I am very grateful to the authors of [Russian-Phd-LaTeX-Dissertation-Template](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template) that simplified significantly the process of my PhD preparation. To compile the files locally, visit the referenced Git repository for instruction on the work with the LaTeX template. 
@@ -27,13 +30,13 @@ conda activate PhD-env
 This will set up a Conda environment named `PhD-env` with all the required dependencies for running the FESTIM scripts. 
 
 > [!WARNING]  
-> Most of the scripts were ran on HPC with Slurm Workload Manager. Each subfolder includes the HPC scripts. An example on how to perform a sequential series of simulations is given in this [book](./Scripts/Chapter_4/LID_simulation/LID.ipynb)
+> Some scripts for chapters 3 & 4 were ran on HPC with Slurm Workload Manager. Each subfolder includes the HPC scripts. An example on how to perform a sequential series of simulations is given in this [book](./Scripts/Chapter_4/LID_simulation/LID.ipynb)
 > For any queries, contact: VVKulagin@mephi.ru
 
 Navigate to the desired folder and run the Jupyter books using the activated Conda environment.
 
 > [!NOTE]  
-> LaTeX is required to reproduce paper-quality figures. To install required dependencies, run the following command in your terminal:
+> LaTeX is required to reproduce figures. To install required dependencies, run the following command in your terminal:
 > ```
 > sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 > ```
