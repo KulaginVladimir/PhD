@@ -17,4 +17,4 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: compiledPDF
-          path: ./Thesis/dissertation.pdf
+          path: dissertation.pdf
