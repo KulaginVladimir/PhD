@@ -14,7 +14,7 @@ jobs:
         run: |
           cd ./Thesis
           make dissertation
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: compiledPDF
           path: ./Thesis/dissertation.pdf
