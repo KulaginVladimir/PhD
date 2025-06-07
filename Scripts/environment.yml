@@ -1,4 +1,4 @@
-name: PhD
+name: PhD-env
 channels:
   - conda-forge
 dependencies:
@@ -18,3 +18,6 @@ dependencies:
       - git+https://github.com/festim-dev/FESTIM@79d8fa7
       - h-transport-materials
       - pypalettes
+      - pyenergydiagrams
+      - mpmath
+      - matplotx

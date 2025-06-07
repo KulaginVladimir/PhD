@@ -1,0 +1,4 @@
+ArrayTaskID    f_ELM     q_stat  E_ELM   Edt     eta_tr
+1               0        1e6     9400    1.5     1e-4
+2               0        5e6     9400    1.5     1e-4
+3               0        10e6     9400    1.5     1e-4
