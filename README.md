@@ -1,7 +1,7 @@
 ## Overview
 Source files to reproduces the main results of the PhD thesis entitled **Modelling of deuterium retention and desorption processes in tungsten under pulsed plasma and laser impact**.
 
-### [![Latest PDF](https://img.shields.io/static/v1?label=PDF&logo=adobeacrobatreader&message=see%20latest%20version&color=success)](../../blob/compiledPDF/dissertation.pdf)
+### [![Latest PDF](https://img.shields.io/static/v1?label=PDF&logo=adobeacrobatreader&message=see%20latest%20version&color=success)](../../blob/compiledPDF/Thesis/dissertation.pdf)
 
 ## Structure
 * [Thesis](Thesis): Thesis and annotation. I am very grateful to the authors of [Russian-Phd-LaTeX-Dissertation-Template](https://github.com/AndreyAkinshin/Russian-Phd-LaTeX-Dissertation-Template) that simplified significantly the process of my PhD preparation. To compile the files locally, visit the referenced Git repository for instruction on the work with the LaTeX template. 

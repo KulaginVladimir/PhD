@@ -5,16 +5,21 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Set up Git repository
       - uses: actions/checkout@v4
-      - name: dep
+
+      - name: Set up LaTeX
         run: |
           sudo apt -y install make texlive-full ttf-mscorefonts-installer
           sudo fc-cache -fv
-      - name: make
+
+      - name: Compile dissertation
         run: |
           cd ./Thesis
           make dissertation
+
+      - name: Upload Release Asset
       - uses: actions/upload-artifact@v4
         with:
           name: compiledPDF
-          path: dissertation.pdf
+          path: ./Thesis/dissertation.pdf
