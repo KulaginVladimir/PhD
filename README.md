@@ -38,7 +38,7 @@ Navigate to the desired folder and run the Jupyter books using the activated Con
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.14036908.svg)](https://doi.org/10.5281/zenodo.15614479)
 
 > [!NOTE]  
-> LaTeX is required to reproduce figures. To install required dependencies, run the following command in your terminal:
+> LaTeX is required to reproduce figures. To install the required dependencies, run the following command in your terminal:
 > ```
 > sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
 > ```
