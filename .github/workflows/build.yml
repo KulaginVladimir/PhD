@@ -18,11 +18,14 @@ jobs:
           cd ./Thesis
           make synopsis
 
+      - name: Move PDF
+        run: mkdir -p github_artifacts && mv ./Thesis/synopsis.pdf ./github_artifacts/
+
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: synopsis.pdf
-          path: ./Thesis/synopsis.pdf
+          path: ./github_artifacts
 
   deploy:
     needs: [build]
