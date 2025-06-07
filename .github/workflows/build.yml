@@ -16,10 +16,32 @@ jobs:
       - name: Compile dissertation
         run: |
           cd ./Thesis
-          make dissertation
+          make synopsis
 
-      - name: Upload Release Asset
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
-          name: compiledPDF
-          path: ./Thesis/dissertation.pdf
+          name: synopsis.pdf
+          path: ./github_artifacts
+
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          path: github_artifacts
+
+      - name: move
+        run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
+
+      - name: deploy on orphan branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./github_deploy
+          publish_branch: build
+          force_orphan: true
