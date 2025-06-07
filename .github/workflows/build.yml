@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Set up Git repository
-      - uses: actions/checkout@v4
+        uses: actions/checkout@v4
 
       - name: Set up LaTeX
         run: |
@@ -19,7 +19,7 @@ jobs:
           make dissertation
 
       - name: Upload Release Asset
-      - uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v4
         with:
           name: compiledPDF
           path: ./Thesis/dissertation.pdf
