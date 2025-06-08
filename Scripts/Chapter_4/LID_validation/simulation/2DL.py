@@ -131,7 +131,7 @@ model.initial_conditions = [
 # Set boundary conditions
 model.boundary_conditions = [
     F.FluxBC(surfaces=6, value=pulse(F.x, F.t), field="T"),
-    F.CustomFlux(surfaces=[3, 6], field="T", function=rad),
+    # F.CustomFlux(surfaces=[3, 6], field="T", function=rad),
     F.DirichletBC(surfaces=6, value=0, field=0),
 ]
 

@@ -21,8 +21,10 @@ class LID_simulation:
         eta_tr,
         phi,
         output_folder,
+        output_name,
         is_txt=False,
         soret=True,
+        alpha=1,
     ):
         self.E_laser = E_laser
         self.duration = duration
@@ -31,13 +33,15 @@ class LID_simulation:
         self.eta_tr = eta_tr
         self.phi = phi
         self.output_folder = output_folder
+        self.output_name = output_name
         self.is_txt = is_txt
         self.soret = soret
+        self.alpha = alpha
 
         if duration == "ns":
             self.q_heat = lambda t: E_laser * heat_pulses.gauss_heat(t, 40e-9, 25e-9)
 
-            self.final_time = 10000e-9
+            self.final_time = 1000e-9
             self.step_size = F.Stepsize(
                 initial_value=1e-10,
                 stepsize_change_ratio=1.05,
@@ -48,7 +52,7 @@ class LID_simulation:
             self.vertices = np.concatenate(
                 [
                     np.linspace(0, 1e-6, 1000),
-                    np.linspace(1e-6, 10e-6, 500),
+                    np.linspace(1e-6, 10e-6, 750),
                     np.linspace(10e-6, 100e-6, 500),
                 ]
             )
@@ -58,19 +62,19 @@ class LID_simulation:
                 t, 2.5e-6, 9.5e-6, 0, 0.5e-6, 0.5e-6
             )
 
-            self.final_time = 1000e-6
+            self.final_time = 100e-6
             self.step_size = F.Stepsize(
                 initial_value=1e-8,
                 stepsize_change_ratio=1.05,
-                max_stepsize=lambda t: 5e-8 if t < 20e-6 else 5e-7,
+                max_stepsize=lambda t: 2.5e-8 if t < 20e-6 else 5e-7,
                 dt_min=1e-11,
             )
 
             self.vertices = np.concatenate(
                 [
-                    np.linspace(0, 20e-6, 2000),
+                    np.linspace(0, 10e-6, 1000),
                     np.linspace(10e-6, 50e-6, 1000),
-                    np.linspace(50e-6, 1e-3, 500),
+                    np.linspace(50e-6, 0.5e-3, 1000),
                 ]
             )
 
@@ -79,11 +83,11 @@ class LID_simulation:
                 t, 0.25e-3, 4.95e-3, 0.3, 0.05e-3, 0.05e-3
             )
 
-            self.final_time = 1000e-3
+            self.final_time = 20e-3
             self.step_size = F.Stepsize(
                 initial_value=1e-6,
                 stepsize_change_ratio=1.05,
-                max_stepsize=lambda t: 1e-5 if t < 10e-3 else 1e-3,
+                max_stepsize=lambda t: 5e-6 if t < 10e-3 else 5e-5,
                 dt_min=1e-11,
             )
 
@@ -165,21 +169,25 @@ class LID_simulation:
         return 2 * cm**2 * k_m_b
 
     def J_vs(self, T, cs, cm):
-        return -self.J_a(T, cs) - self.J_m_s(T, cs) - self.J_m_sb(T, cs, cm)
+        return -self.J_m_s(T, cs) - self.J_a(
+            T, cs
+        )  # - self.J_m_s(T, cs) - self.J_m_sb(T, cs, cm)
 
     def J_vb(self, T, cs, cm):
-        return -self.J_m_b(T, cm) - self.J_m_sb(T, cs, cm)
+        return 0  # -self.J_m_b(T, cm) - self.J_m_sb(T, cs, cm)
 
     def run(self):
         LID_model = F.Simulation(log_level=40)
 
         LID_model.mesh = F.MeshFromVertices(self.vertices)
 
+        mod_thermal_cond = lambda T: self.material.thermal_cond_function(T) * self.alpha
+
         material = F.Material(
             id=1,
             D_0=self.material.D_0,
             E_D=self.material.E_diff,
-            thermal_cond=self.material.thermal_cond_function,
+            thermal_cond=mod_thermal_cond,
             heat_capacity=self.material.heat_capacity_function,
             rho=self.material.rho,
             Q=self.material.heat_of_transport_function,
@@ -232,14 +240,13 @@ class LID_simulation:
         LID_model.dt = self.step_size
 
         LID_model.settings = F.Settings(
-            absolute_tolerance=1e15,
+            absolute_tolerance=1e16,
             relative_tolerance=1e-6,
             final_time=self.final_time,
             soret=self.soret,
             traps_element_type="DG",
         )
 
-        filename_params = f"_{self.material_name}_{self.duration}_E{self.E_laser/1e6:.5f}MJ_Edt{self.E_dt:.5f}eV_eta{-np.log10(self.eta_tr):.5f}"
         derived_quantities = F.DerivedQuantities(
             [
                 F.AdsorbedHydrogen(surface=1),
@@ -248,7 +255,7 @@ class LID_simulation:
                 F.PointValue(field=0, x=0),
             ],
             show_units=True,
-            filename=f"{self.output_folder}/data{filename_params}.csv",
+            filename=f"{self.output_folder}/data_{self.output_name}.csv",
         )
 
         TXT = [
@@ -256,19 +263,19 @@ class LID_simulation:
                 field="retention",
                 filter=True,
                 write_at_last=True,
-                filename=f"{self.output_folder}/ret{filename_params}.txt",
+                filename=f"{self.output_folder}/ret_{self.output_name}.txt",
             ),
             F.TXTExport(
                 field="1",
                 filter=True,
                 write_at_last=True,
-                filename=f"{self.output_folder}/trapped{filename_params}.txt",
+                filename=f"{self.output_folder}/trapped_{self.output_name}.txt",
             ),
             F.TXTExport(
                 field="solute",
                 filter=True,
                 write_at_last=True,
-                filename=f"{self.output_folder}/solute{filename_params}.txt",
+                filename=f"{self.output_folder}/solute_{self.output_name}.txt",
             ),
         ]
 

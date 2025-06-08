@@ -3,7 +3,8 @@
 
 % Откомментируйте, чтобы отключить генерацию закладок в pdf
 % \PassOptionsToPackage{bookmarks=false}{hyperref}
-\documentclass[a5paper,10pt,oneside,openany,article]{memoir} %,draft
+% \documentclass[a5paper,10pt,oneside,openany,article]{memoir} %,draft
+\documentclass[a4paper,12pt,oneside,openany,article]{memoir}
 
 \input{common/setup}          % общие настройки шаблона
 \input{common/packages}       % Пакеты общие для диссертации и автореферата
@@ -48,6 +49,8 @@
 \mainmatter*                  % Нумерация страниц не изменится, но начнётся с новой страницы
 \input{Synopsis/content}      % Содержание автореферата
 
+\begin{comment}
+
 %%% Выходные сведения типографии
 \newpage\thispagestyle{empty}
 
@@ -73,5 +76,6 @@
     Типография \blank[0.5\linewidth]
 \end{center}
 \cleardoublepage
+\end{comment}
 
 \end{document}
