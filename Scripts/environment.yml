@@ -4,6 +4,7 @@ channels:
 dependencies:
   - python=3.11
   - fenics
+  - festim
   - matplotlib
   - pandas
   - scipy
@@ -15,7 +16,6 @@ dependencies:
   - meshio
   - h5py
   - pip:
-      - git+https://github.com/festim-dev/FESTIM@79d8fa7
       - h-transport-materials
       - pypalettes
       - pyenergydiagrams
