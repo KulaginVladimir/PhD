@@ -40,6 +40,6 @@ Navigate to the desired folder and run the Jupyter books using the activated Con
 > [!NOTE]  
 > LaTeX is required to reproduce figures. To install the required dependencies, run the following command in your terminal:
 > ```
-> sudo apt-get install dvipng texlive-latex-extra texlive-fonts-recommended cm-super
+> sudo apt-get install dvipng texlive-science texlive-latex-extra texlive-fonts-recommended cm-super
 > ```
 
