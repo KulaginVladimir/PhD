@@ -17,7 +17,7 @@
 
 %%% Макет страницы %%%
 % Выставляем значения полей (ГОСТ 7.0.11-2011, 5.3.7)
-\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar} %, heightrounded, showframe
+\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, nofoot, nomarginpar} %, heightrounded, showframe OLD
 \setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
 \setlength{\footskip}{12.3pt} % снимет warning, согласно https://tex.stackexchange.com/a/334346
 
@@ -87,15 +87,15 @@
 \newif\ifendTOC
 
 \newcommand*{\tocheader}{
-\ifnumequal{\value{pgnum}}{1}{%
-    \ifendTOC\else\hbox to \linewidth%
-      {\noindent{}~\hfill{Стр.}}\par%
-      \ifnumless{\value{page}}{3}{}{%
-        \vspace{0.5\onelineskip}
-      }
-      \afterpage{\tocheader}
-    \fi%
-}{}%
+    \ifnumequal{\value{pgnum}}{1}{%
+        \ifendTOC\else\hbox to \linewidth%
+            {\noindent{}~\hfill{Стр.}}\par%
+            \ifnumless{\value{page}}{3}{}{%
+                \vspace{0.5\onelineskip}
+            }
+            \afterpage{\tocheader}
+        \fi%
+    }{}%
 }%
 
 %%% Оформление заголовков глав, разделов, подразделов %%%
@@ -186,7 +186,7 @@
 }{}
 
 \AfterEndPreamble{
-%% регистрируем счётчики в системе totcounter
+    %% регистрируем счётчики в системе totcounter
     \regtotcounter{totalcount@figure}
     \regtotcounter{totalcount@table}       % Если иным способом поставить в преамбуле то ошибка в числе таблиц
     \regtotcounter{TotPages}               % Если иным способом поставить в преамбуле то ошибка в числе страниц
