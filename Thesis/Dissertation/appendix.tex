@@ -7,9 +7,9 @@
         \rho  =             & \num{19250},                                                                   \\
         C_p M_\mathrm{W}  = & \left\{
         \begin{alignedat}{3}
-            & \num{21.868372} + \num{8.068661e-3} T - \num{3.756196e-6} T^2 +     \\
-            & + \num{1.075862e-9} T^3 + \num{1.406637e4} T^{-2}, \quad \SI{300}{\kelvin} \leq T \leq \SI{3080}{\kelvin}, \\
-            & \num{2.022} + \num{1.315e-3} T, \quad \SI{3080}{\kelvin} \textless T \leq \SI{3695}{\kelvin},
+             & \num{21.868372} + \num{8.068661e-3} T - \num{3.756196e-6} T^2 +                                            \\
+             & + \num{1.075862e-9} T^3 + \num{1.406637e4} T^{-2}, \quad \SI{300}{\kelvin} \leq T \leq \SI{3080}{\kelvin}, \\
+             & \num{2.022} + \num{1.315e-3} T, \quad \SI{3080}{\kelvin} \textless T \leq \SI{3695}{\kelvin},
         \end{alignedat}
         \right.                                                                                              \\
         \kappa =            & \num{149.441} - \num{45.466e-3} T + \num{13.193e-6} T^2 - \num{1.484e-9} T^3 + \\
@@ -317,7 +317,7 @@
             Энергия активации перехода из адсорбированного состояния в растворенное,~\si{\electronvolt} & $E_\mathrm{sb}$        & \num{2.460}     \\
             Теплота растворения,~\si{\electronvolt}                                                     & $Q_\mathrm{s}$         & \num{1.580}     \\
             Теплота хемосорбции,~\si{\electronvolt}                                                     & $|Q_\mathrm{c}|$       & \num{0.500}     \\
-            Энергия активации растворения,~\si{\electronvolt}                                             & $E_\mathrm{s}$         & \num{1.960}     \\
+            Энергия активации растворения,~\si{\electronvolt}                                           & $E_\mathrm{s}$         & \num{1.960}     \\
             \bottomrule
         \end{tabularx}
     \end{threeparttable}
@@ -328,37 +328,37 @@
 
 \begin{table}[h]
     \renewcommand{\arraystretch}{1.25}
-       \centering
+    \centering
     \rotatebox{270}{
-    \begin{minipage}{0.9\textwidth}
-        \small
-        \caption{Подгоночные параметры в уравнениях~\cref{eq:ch3/heat_WCu}} \label{tab:fit_params}
-        \begin{threeparttable}
-            \begin{tabular}{*{13}c}
-                \toprule
-                $q_{\mathrm{stat}}$, & Параметр & \multicolumn{11}{l}{Частота ELM-событий, Гц} \\
-                \cline{3-13} 	 
-                \si{\mega\watt\per\meter\squared} && Стац. &10 & 20 & 30 & 40 & 50 & 60 & 70 & 80 & 90 & 100 \\
-                \hline
-                \hline
-                1 & a, 1 	& 0.151 & 0.135 & 0.134 & 0.132 & 0.130 & 0.129 & 0.128 & 0.127 & 0.126 & 0.125 & 0.124\\
-                & b, К$^{-1}$  & 0.063 & 0.012 & 0.009 & 0.008 & 0.007 & 0.006 & 0.006 & 0.005 & 0.005 & 0.005 & 0.005 \\
-                & c, 1 		  & 0.145 & 0.122 & 0.126 & 0.125 & 0.124 & 0.123 & 0.122 & 0.121 & 0.120 & 0.120 & 0.119 \\
-                & d, К 		  & 0.96  & 4.16  & 6.05 & 7.02  & 7.82  & 8.49  & 9.11  & 9.65  & 10.18  & 10.65 & 11.09 \\
-                        
-                5 & a, 1  		  & 0.139 & 0.131 & 0.128 & 0.126 & 0.125 & 0.124 & 0.123 & 0.123 & 0.122 & 0.121 & 0.121\\
-                & b, К$^{-1}$  & 0.013 & 0.007 & 0.006 & 0.005 & 0.005 & 0.004 & 0.004 & 0.004 & 0.004 & 0.004 & 0.004 \\
-                & c, 1 		  & 0.134 & 0.120 & 0.121 & 0.121 & 0.120 & 0.119 & 0.118 & 0.117 & 0.117 & 0.117 & 0.116 \\
-                & d, К 		  & 4.29  & 8.20  & 9.00  & 9.83  & 10.57  & 11.22  & 11.81  & 12.36  & 12.88 & 13.34 & 13.78 \\
-                            
-                10& a, 1 	      & 0.130 & 0.124 & 0.123 & 0.121 & 0.121 & 0.120 & 0.119 & 0.119 & 0.119 & 0.118 & 0.118\\
-                & b, К$^{-1}$  & 0.007 & 0.005 & 0.004 & 0.004 & 0.003 & 0.003 & 0.003 & 0.003 & 0.003 & 0.003 & 0.003 \\
-                & c, 1 		  & 0.125 & 0.118 & 0.118 & 0.117 & 0.116 & 0.116 & 0.115 & 0.115 & 0.114 & 0.114 & 0.114 \\
-                & d, К 		  & 7.81 & 11.79 & 12.31 & 13.09 & 13.82 & 14.48 & 15.08 & 15.64 & 16.17 & 16.66 & 17.14 \\
-                \bottomrule
-            \end{tabular}
-        \end{threeparttable}
-    \end{minipage}}
+        \begin{minipage}{0.9\textwidth}
+            \small
+            \caption{Подгоночные параметры в уравнениях~\cref{eq:ch3/heat_WCu}} \label{tab:fit_params}
+            \begin{threeparttable}
+                \begin{tabular}{*{13}c}
+                    \toprule
+                    $q_{\mathrm{stat}}$,              & Параметр    & \multicolumn{11}{l}{Частота ELM-событий, Гц}                                                                                 \\
+                    \cline{3-13}
+                    \si{\mega\watt\per\meter\squared} &             & Стац.                                        & 10    & 20    & 30    & 40    & 50    & 60    & 70    & 80    & 90    & 100   \\
+                    \hline
+                    \hline
+                    1                                 & a, 1        & 0.151                                        & 0.135 & 0.134 & 0.132 & 0.130 & 0.129 & 0.128 & 0.127 & 0.126 & 0.125 & 0.124 \\
+                                                      & b, К$^{-1}$ & 0.063                                        & 0.012 & 0.009 & 0.008 & 0.007 & 0.006 & 0.006 & 0.005 & 0.005 & 0.005 & 0.005 \\
+                                                      & c, 1        & 0.145                                        & 0.122 & 0.126 & 0.125 & 0.124 & 0.123 & 0.122 & 0.121 & 0.120 & 0.120 & 0.119 \\
+                                                      & d, К        & 0.96                                         & 4.16  & 6.05  & 7.02  & 7.82  & 8.49  & 9.11  & 9.65  & 10.18 & 10.65 & 11.09 \\
+
+                    5                                 & a, 1        & 0.139                                        & 0.131 & 0.128 & 0.126 & 0.125 & 0.124 & 0.123 & 0.123 & 0.122 & 0.121 & 0.121 \\
+                                                      & b, К$^{-1}$ & 0.013                                        & 0.007 & 0.006 & 0.005 & 0.005 & 0.004 & 0.004 & 0.004 & 0.004 & 0.004 & 0.004 \\
+                                                      & c, 1        & 0.134                                        & 0.120 & 0.121 & 0.121 & 0.120 & 0.119 & 0.118 & 0.117 & 0.117 & 0.117 & 0.116 \\
+                                                      & d, К        & 4.29                                         & 8.20  & 9.00  & 9.83  & 10.57 & 11.22 & 11.81 & 12.36 & 12.88 & 13.34 & 13.78 \\
+
+                    10                                & a, 1        & 0.130                                        & 0.124 & 0.123 & 0.121 & 0.121 & 0.120 & 0.119 & 0.119 & 0.119 & 0.118 & 0.118 \\
+                                                      & b, К$^{-1}$ & 0.007                                        & 0.005 & 0.004 & 0.004 & 0.003 & 0.003 & 0.003 & 0.003 & 0.003 & 0.003 & 0.003 \\
+                                                      & c, 1        & 0.125                                        & 0.118 & 0.118 & 0.117 & 0.116 & 0.116 & 0.115 & 0.115 & 0.114 & 0.114 & 0.114 \\
+                                                      & d, К        & 7.81                                         & 11.79 & 12.31 & 13.09 & 13.82 & 14.48 & 15.08 & 15.64 & 16.17 & 16.66 & 17.14 \\
+                    \bottomrule
+                \end{tabular}
+            \end{threeparttable}
+        \end{minipage}}
 \end{table}
 
 
@@ -366,97 +366,97 @@
 
 Рассмотрим стационарное уравнение диффузии с известным распределением температуры ($\partial_x T \neq 0$), определенное на отрезке \( x \in [0, L] \). На левой границе зададим однородное граничное условие Дирихле, когда на правой рассмотрим два случая: однородное условие Дирихле и однородное условие Неймана. Сначала обобщим уравнение~\eqref{eq:ch3/eq:solute_analytic} на случай $k$ источников:
 \begin{align}
-	\label{eq:general_stat_dif}
-	\begin{cases}
-		\dfrac{\partial}{\partial x}\left( D(T)\left[ \dfrac{\partial c}{\partial x} + H(T)c\right]\right)=-\sum\limits_{i=1}^k S_i(x), \\[5pt]
-		\left.c\right\vert_{x=0}=0,                                                                                                     \\[5pt]
-		\left[\begin{array}{ll}
-			      \left.c\right\vert_{x=L}=0,  \text{если гр. усл. Дирихле}, \\[5pt]
-			      \left.D(T)\left( \dfrac{\partial c}{\partial x} + H(T)c\right)\right\vert_{x=L}=0,  \text{если гр. усл. Неймана}.
-		      \end{array}
-		\right.
-	\end{cases}
+    \label{eq:general_stat_dif}
+    \begin{cases}
+        \dfrac{\partial}{\partial x}\left( D(T)\left[ \dfrac{\partial c}{\partial x} + H(T)c\right]\right)=-\sum\limits_{i=1}^k S_i(x), \\[5pt]
+        \left.c\right\vert_{x=0}=0,                                                                                                     \\[5pt]
+        \left[\begin{array}{ll}
+                  \left.c\right\vert_{x=L}=0,  \text{если гр. усл. Дирихле}, \\[5pt]
+                  \left.D(T)\left( \dfrac{\partial c}{\partial x} + H(T)c\right)\right\vert_{x=L}=0,  \text{если гр. усл. Неймана}.
+              \end{array}
+        \right.
+    \end{cases}
 \end{align}
 По сравнению с уравнением~\eqref{eq:ch3/eq:solute_analytic}, обозначения сокращены для краткости. Уравнение диффузии может быть сведено к:
 \begin{equation}
-	\frac{\partial}{\partial x}\left(p(x)\frac{\partial}{\partial x}\left[ ce^{\int\limits_0^x H(T)d\chi}\right]\right)=-\sum\limits_{i=1}^k S_i(x),
+    \frac{\partial}{\partial x}\left(p(x)\frac{\partial}{\partial x}\left[ ce^{\int\limits_0^x H(T)d\chi}\right]\right)=-\sum\limits_{i=1}^k S_i(x),
 \end{equation}
 где $p(x)=D(T)e^{-\int\limits_0^x H(T)d\chi}$. Решение этого уравнения можно найти, применив теорему суперпозиции:
 \begin{equation}
-	\label{eq:ST}
-	c=e^{-\int\limits_0^x H(T)d\chi}\,\sum\limits_{i=1}^k \left( \int\limits_0^L G(x,y)S_i(y)dy \right),
+    \label{eq:ST}
+    c=e^{-\int\limits_0^x H(T)d\chi}\,\sum\limits_{i=1}^k \left( \int\limits_0^L G(x,y)S_i(y)dy \right),
 \end{equation}
 где $G(x,y)$ является функцией Грина, удовлетворяющей следующей вспомогательной задаче:
 \begin{align}
-	\label{eq:Green_problem}
-	\begin{cases}
-		\dfrac{\partial}{\partial x}\left(p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right)=-\delta(x-y), \\[5pt]
-		\left.G(x,y)\right\vert_{x=0}=0,                                                                 \\[5pt]
-		\left[\begin{array}{ll}
-			      \left.G(x,y)\right\vert_{x=L}=0,  \text{eсли гр. усл. Дирихле}, \\[5pt]
-			      \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=L}=0,  \text{eсли гр. усл. Неймана},
-		      \end{array}\right.
-	\end{cases}
+    \label{eq:Green_problem}
+    \begin{cases}
+        \dfrac{\partial}{\partial x}\left(p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right)=-\delta(x-y), \\[5pt]
+        \left.G(x,y)\right\vert_{x=0}=0,                                                                 \\[5pt]
+        \left[\begin{array}{ll}
+                  \left.G(x,y)\right\vert_{x=L}=0,  \text{eсли гр. усл. Дирихле}, \\[5pt]
+                  \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=L}=0,  \text{eсли гр. усл. Неймана},
+              \end{array}\right.
+    \end{cases}
 \end{align}
 где \( \delta(x) \) "--- дельта-функция Дирака. В особой точке выполняются свойства функции Грина краевой задачи:
 \begin{gather}
-	\label{eq:Green_problem_connect}
-	 \left.G(x,y)\right\vert_{x=y^+}=\left.G(x,y)\right\vert_{x=y^-},                                                                                   \\
-	 \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^+}-\left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^-}=-1.\nonumber
+    \label{eq:Green_problem_connect}
+    \left.G(x,y)\right\vert_{x=y^+}=\left.G(x,y)\right\vert_{x=y^-},                                                                                   \\
+    \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^+}-\left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^-}=-1.\nonumber
 \end{gather}
 
 Для обоих типов условий на правой границе функция Грина может быть выражена следующим образом:
 \begin{subequations}
-	\label{eq:Green_solution}
-	\begin{align}
-		 & \text{Если гр. усл. Дирихле}:
-		\begin{cases}
-			G_1(x,y)=\int\limits_0^x\dfrac{d\chi}{p(\chi)}\,\dfrac{\int\limits_y^L\dfrac{d\chi}{p(\chi)}}{\int\limits_0^L\dfrac{d\chi}{p(\chi)}}, & x\in[0,y], \\[25pt]
-			G_2(x,y)=\int\limits_0^y\dfrac{d\chi}{p(\chi)}\,\dfrac{\int\limits_x^L\dfrac{d\chi}{p(\chi)}}{\int\limits_0^L\dfrac{d\chi}{p(\chi)}}, & x\in[y,L]. \\
-		\end{cases}\label{eq:Green_solution_D} \\[10pt]
-		 & \text{Если гр. усл. Неймана}:
-		\begin{cases}
-			G_1(x,y)=\int\limits_0^x\dfrac{d\chi}{p(\chi)}, & x\in[0,y], \\[10pt]
-			G_2(x,y)=\int\limits_0^y\dfrac{d\chi}{p(\chi)}, & x\in[y,L].
-		\end{cases}\label{eq:Green_solution_N}
-	\end{align}
+    \label{eq:Green_solution}
+    \begin{align}
+         & \text{Если гр. усл. Дирихле}:
+        \begin{cases}
+            G_1(x,y)=\int\limits_0^x\dfrac{d\chi}{p(\chi)}\,\dfrac{\int\limits_y^L\dfrac{d\chi}{p(\chi)}}{\int\limits_0^L\dfrac{d\chi}{p(\chi)}}, & x\in[0,y], \\[25pt]
+            G_2(x,y)=\int\limits_0^y\dfrac{d\chi}{p(\chi)}\,\dfrac{\int\limits_x^L\dfrac{d\chi}{p(\chi)}}{\int\limits_0^L\dfrac{d\chi}{p(\chi)}}, & x\in[y,L]. \\
+        \end{cases}\label{eq:Green_solution_D} \\[10pt]
+         & \text{Если гр. усл. Неймана}:
+        \begin{cases}
+            G_1(x,y)=\int\limits_0^x\dfrac{d\chi}{p(\chi)}, & x\in[0,y], \\[10pt]
+            G_2(x,y)=\int\limits_0^y\dfrac{d\chi}{p(\chi)}, & x\in[y,L].
+        \end{cases}\label{eq:Green_solution_N}
+    \end{align}
 \end{subequations}
 Если градиент температуры мал ($\partial_x T \rightarrow 0$, $T \rightarrow$ const.), функция Грина сводится к:
 \begin{subequations}
-	\begin{align}
-		 & \text{Если гр. усл. Дирихле}:
-		\begin{cases}
-			G_1(x,y)=\dfrac{x}{D(T)}\,\dfrac{L-y}{L}, & x\in[0,y], \\[25pt]
-			G_2(x,y)=\dfrac{y}{D(T)}\,\dfrac{L-x}{L}, & x\in[y,L], \\
-		\end{cases} \\[10pt]
-		 & \text{Если гр. усл. Неймана}:
-		\begin{cases}
-			G_1(x,y)=\dfrac{x}{D(T)}, & x\in[0,y], \\[10pt]
-			G_2(x,y)=\dfrac{y}{D(T)}, & x\in[y,L],
-		\end{cases}
-	\end{align}
+    \begin{align}
+         & \text{Если гр. усл. Дирихле}:
+        \begin{cases}
+            G_1(x,y)=\dfrac{x}{D(T)}\,\dfrac{L-y}{L}, & x\in[0,y], \\[25pt]
+            G_2(x,y)=\dfrac{y}{D(T)}\,\dfrac{L-x}{L}, & x\in[y,L], \\
+        \end{cases} \\[10pt]
+         & \text{Если гр. усл. Неймана}:
+        \begin{cases}
+            G_1(x,y)=\dfrac{x}{D(T)}, & x\in[0,y], \\[10pt]
+            G_2(x,y)=\dfrac{y}{D(T)}, & x\in[y,L],
+        \end{cases}
+    \end{align}
 \end{subequations}
 что в точности соответствует выражениям, полученным ранее~\cite{Denis2022}. Подстановка уравнения~\eqref{eq:Green_solution} в выражение~\eqref{eq:ST} позволяет получить общее решение стационарной задачи диффузии:
 \begin{align}
-	c= & e^{-\int\limits_0^x H(T)d\chi}\,\sum\limits_{i=1}^k \left( \int\limits_0^x G_2(x,y)S_i(y)dy + \int\limits_x^L G_1(x,y)S_i(y)dy \right).\nonumber
+    c= & e^{-\int\limits_0^x H(T)d\chi}\,\sum\limits_{i=1}^k \left( \int\limits_0^x G_2(x,y)S_i(y)dy + \int\limits_x^L G_1(x,y)S_i(y)dy \right).\nonumber
 \end{align}
 
 \chapter{Решение уравнения теплопроводности на полубесконечной прямой}\label{app:E}
 
 Уравнение теплопроводности, определяемое на полубесконечной прямой, описывается следующим образом:
 \begin{align}
-	\label{eq:heat_transfer_semiinfinite}
-	\begin{cases}
-		\dfrac{\partial T}{\partial t} & = a^2 \dfrac{\partial^2 T}{\partial x^2}, \\[5pt]
-		\left.\dfrac{\partial T}{\partial x}\right\vert_{x=0}& = -\dfrac{q(t)}{\kappa},                \\[5pt]
-        \left. T \right\vert_{t=0} & = T_0,
-	\end{cases}
+    \label{eq:heat_transfer_semiinfinite}
+    \begin{cases}
+        \dfrac{\partial T}{\partial t}                        & = a^2 \dfrac{\partial^2 T}{\partial x^2}, \\[5pt]
+        \left.\dfrac{\partial T}{\partial x}\right\vert_{x=0} & = -\dfrac{q(t)}{\kappa},                  \\[5pt]
+        \left. T \right\vert_{t=0}                            & = T_0,
+    \end{cases}
 \end{align}
 где \( a = \sqrt{\kappa/C_p\rho} \) "--- температуропроводность. Дифференциальное уравнение в частных производных определено на области \( x \geq 0 \). Тепловые свойства материала предполагаются не зависящими от температуры. Известно, что функция Грина для системы~\cref{eq:heat_transfer_semiinfinite} и изменение температуры за счет плотности потока на границе равны~\cite{Bechtel1975}:
 \begin{subequations}
     \begin{gather}
-        G(x,t|x',t') = \frac{1}{2a\sqrt{\pi(t-t')}} \left[ \exp \left( -\frac{(x-x')^2}{4a^2(t-t')} \right) + \exp \left( -\frac{(x+x')^2}{4a^2(t-t')} \right) \right],\label{eq:heat_eq_Green}\\
-        T(x,t)-T_0 \equiv \Delta T(x,t) = \frac{a^2}{\kappa} \int\limits_0^t G(x,t|0,t')q(t')dt'. \label{eq:deltaT}
+        G(x,t;x',t') = \frac{1}{2a\sqrt{\pi(t-t')}} \left[ \exp \left( -\frac{(x-x')^2}{4a^2(t-t')} \right) + \exp \left( -\frac{(x+x')^2}{4a^2(t-t')} \right) \right],\label{eq:heat_eq_Green}\\
+        T(x,t)-T_0 \equiv \Delta T(x,t) = \frac{a^2}{\kappa} \int\limits_0^t G(x,t;0,t')q(t')dt'. \label{eq:deltaT}
     \end{gather}
 \end{subequations}
 Подставляя функцию Грина~\cref{eq:heat_eq_Green} в уравнение~\cref{eq:deltaT} и полагая \(x=0\), приходим к выражению для временной эволюции изменения температуры поверхности:
@@ -467,7 +467,7 @@
 Для использованных временных профилей лазерных импульсов интеграл может быть сведен к табулированным трансцендентным функциям. Временной профиль при наносекундном нагреве явно задавался в соответствии с распределением Гаусса:
 \begin{equation}
     q_\mathrm{ns}=\frac{E_0}{\sqrt{2\pi}\sigma_\tau} \exp \left( -\frac{(t-t_0)^2}{2\sigma_\tau^2} \right).
-\end{equation} 
+\end{equation}
 Повышение температуры поверхности при такой нагрузке~\cite{Bechtel1975}:
 \begin{equation}
     \label{eq:dT_ns}
@@ -476,22 +476,22 @@
 где \( z = (t-t_0)/\sigma_\tau \), \(D_{-1/2}(x) \) "--- функция параболического цилиндра. Дифференцируя выражение~\cref{eq:dT_ns}, можно показать, что максимальная температура поверхности достигается при \( t_\mathrm{ns}^{\max} \approx t_0 + \num{0.765}\sigma_\tau \), а ее значение, выраженное через полуширину профиля нагрузки (\(\tau_\mathrm{ns}\)), составляет:
 \begin{equation}
     \Delta T_\mathrm{ns}(0, t_\mathrm{ns}^{\max}) \approx \num{0.783} \, \frac{2E_0}{\sqrt{\pi \tau_\mathrm{ns} \kappa C_p \rho}}.
-\end{equation} 
+\end{equation}
 
 Для трапециевидного временного профиля (уравнения~\cref{eq:ch3/pulse_form}) временная эволюция изменения температуры поверхности определяется следующей совокупностью выражений:
 \begin{subequations}
     \label{eq:dT_usms}
     \begin{align}
         \Delta T_\mathrm{i}(0,t) & = \dfrac{2E_0}{\sqrt{\pi\tau_i \kappa C_p \rho}} h(t), \\
-        h(t) & = 
+        h(t)                     & =
         \begin{cases}
             \begin{alignedat}{3}
-            h_1(t) = &\sqrt{\dfrac{t}{\tau_i}} - \sqrt{\dfrac{\tau_\mathrm{le}}{\tau_i}} F\left( \sqrt{\dfrac{t}{\tau_\mathrm{le}}} \right), & 0 \leq t \leq t_1, \\
-            h_2(t) = &h_1(t) + \sqrt{\dfrac{\tau_\mathrm{le}}{\tau_i}} \exp \left( -\dfrac{t_1}{\tau_\mathrm{le}} \right) F\left( \sqrt{\dfrac{t-t_1}{\tau_\mathrm{le}}} \right) + &\\
-            &+ \sqrt{\dfrac{t-t_1}{\tau_i}} \left[ w_1(t_1) \left( 1+\dfrac{2\Delta}{3}\, \dfrac{t-t_1}{t_2-t_1} \right) -1 \right], & t_1 < t \leq t_2, \\
-            h_3(t) =& h_2(t) + w_2(t_2) \sqrt{\dfrac{\tau_\mathrm{te}}{\tau_i}} F\left( \sqrt{\dfrac{t-t_2}{\tau_\mathrm{te}}} \right) - & \\
-            &- w_1(t_1) \sqrt{\dfrac{t-t_2}{\tau_i}} \left[ \dfrac{\Delta}{3} \left( 1 + 2 \dfrac{t-t_1}{t_2-t_1} \right) + 1 \right], & t>t_2, 
-        \end{alignedat}
+                h_1(t) = & \sqrt{\dfrac{t}{\tau_i}} - \sqrt{\dfrac{\tau_\mathrm{le}}{\tau_i}} F\left( \sqrt{\dfrac{t}{\tau_\mathrm{le}}} \right),                                       & 0 \leq t \leq t_1, \\
+                h_2(t) = & h_1(t) + \sqrt{\dfrac{\tau_\mathrm{le}}{\tau_i}} \exp \left( -\dfrac{t_1}{\tau_\mathrm{le}} \right) F\left( \sqrt{\dfrac{t-t_1}{\tau_\mathrm{le}}} \right) + &                    \\
+                         & + \sqrt{\dfrac{t-t_1}{\tau_i}} \left[ w_1(t_1) \left( 1+\dfrac{2\Delta}{3}\, \dfrac{t-t_1}{t_2-t_1} \right) -1 \right],                                      & t_1 < t \leq t_2,  \\
+                h_3(t) = & h_2(t) + w_2(t_2) \sqrt{\dfrac{\tau_\mathrm{te}}{\tau_i}} F\left( \sqrt{\dfrac{t-t_2}{\tau_\mathrm{te}}} \right) -                                           &                    \\
+                         & - w_1(t_1) \sqrt{\dfrac{t-t_2}{\tau_i}} \left[ \dfrac{\Delta}{3} \left( 1 + 2 \dfrac{t-t_1}{t_2-t_1} \right) + 1 \right],                                    & t>t_2,
+            \end{alignedat}
         \end{cases}
     \end{align}
 \end{subequations}

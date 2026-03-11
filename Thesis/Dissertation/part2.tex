@@ -25,7 +25,12 @@
     \label{eq:ch2/fernandez_diffusivity}
     D(T) = \frac{\num{1.93e-7}}{\sqrt{2}} \exp \left( -\frac{0.2 \, [\text{эВ}]}{\kBT} \right).
 \end{equation}
-Теплота переноса дейтерия в вольфраме задавалась на основе выражения~\cref{eq:ch1/heat_transport}. В ряде расчетов также учитывался процесс имплантации при облучении поверхности потоком частиц с плотностью \( \Gamma \) (в \si{\per\meter\squared\per\second}), который в общем виде описывается следующим выражением:
+Теплота переноса дейтерия в вольфраме задавалась на основе результатов молекулярнодинамических расчетов~\cite{Dasgupta2023}:
+\begin{equation}
+    \label{eq:ch2/heat_transport}
+    Q^*(T)=-\num{0.0045} \, \kB T^2.
+\end{equation}
+В ряде расчетов также учитывался процесс имплантации при облучении поверхности потоком частиц с плотностью \( \Gamma \) (в \si{\per\meter\squared\per\second}), который в общем виде описывается следующим выражением:
 \begin{equation}
     \label{eq:ch2/impl_source}
     S(\mathbf{x},t)=\Gamma(t)\varphi(\mathbf{x}),
