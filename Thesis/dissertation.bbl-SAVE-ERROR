@@ -20059,69 +20059,6 @@
       \endverb
       \keyw{,biblioexternal,bibliofull}
     \endentry
-    \entry{Xiao2015}{article}{useauthor=false}
-      \name{author}{7}{}{%
-        {{hash=05c874cddeb018e52d2f044b54580e01}{%
-           family={Xiao},
-           familyi={X\bibinitperiod},
-           given={Q.},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=1f3572d3ff33e95b13328dd494ce2643}{%
-           family={Hai},
-           familyi={H\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=c331f414c91b9e611bd519568e072321}{%
-           family={Ding},
-           familyi={D\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=4cecc9f19f90b4c10c8bb2496a919190}{%
-           family={Huber},
-           familyi={H\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=8811024636aaa682bfa69fa3c23216f5}{%
-           family={Philipps},
-           familyi={P\bibinitperiod},
-           given={V.},
-           giveni={V\bibinitperiod}}}%
-        {{hash=75dc247ec9fdb03e1e3fd79961fa9da5}{%
-           family={Gierse},
-           familyi={G\bibinitperiod},
-           given={N.},
-           giveni={N\bibinitperiod}}}%
-        {{hash=154962bbc73c98c520be32a56fa2fbe9}{%
-           family={Sergienko},
-           familyi={S\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {North-Holland}%
-      }
-      \strng{authorbibnamehash}{cd238ea2503a30981b9bf8b7ac4938f1}
-      \strng{authornamehash}{cd238ea2503a30981b9bf8b7ac4938f1}
-      \strng{authorfullhash}{e95e3760d5b6e6549029afee56b11743}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labelprefix}{A}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{463}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{title}{In-situ analysis of the first wall by laser-induced breakdown spectroscopy in the TEXTOR tokamak: Dependence on the magnetic field strength}
-      \field{year}{2015}
-      \field{pages}{911\bibrangedash 914}
-      \range{pages}{4}
-      \field{volume}{463}
-      \range{volume}{1}
-      \verb{doi}
-      \verb 10.1016/J.JNUCMAT.2014.10.065
-      \endverb
-      \keyw{,biblioexternal,bibliofull}
-    \endentry
     \entry{Semerok2016}{article}{useauthor=false}
       \name{author}{8}{}{%
         {{hash=902aa136ad2730ed627f9e2fbdc5534c}{%
@@ -41128,68 +41065,6 @@
       \range{volume}{1}
       \verb{doi}
       \verb 10.1016/j.nme.2026.102066
-      \endverb
-      \keyw{,biblioexternal,bibliofull}
-    \endentry
-    \entry{Xiao2015}{article}{useauthor=false}
-      \name{author}{7}{}{%
-        {{hash=05c874cddeb018e52d2f044b54580e01}{%
-           family={Xiao},
-           familyi={X\bibinitperiod},
-           given={Q.},
-           giveni={Q\bibinitperiod}}}%
-        {{hash=1f3572d3ff33e95b13328dd494ce2643}{%
-           family={Hai},
-           familyi={H\bibinitperiod},
-           given={R.},
-           giveni={R\bibinitperiod}}}%
-        {{hash=c331f414c91b9e611bd519568e072321}{%
-           family={Ding},
-           familyi={D\bibinitperiod},
-           given={H.},
-           giveni={H\bibinitperiod}}}%
-        {{hash=4cecc9f19f90b4c10c8bb2496a919190}{%
-           family={Huber},
-           familyi={H\bibinitperiod},
-           given={A.},
-           giveni={A\bibinitperiod}}}%
-        {{hash=8811024636aaa682bfa69fa3c23216f5}{%
-           family={Philipps},
-           familyi={P\bibinitperiod},
-           given={V.},
-           giveni={V\bibinitperiod}}}%
-        {{hash=75dc247ec9fdb03e1e3fd79961fa9da5}{%
-           family={Gierse},
-           familyi={G\bibinitperiod},
-           given={N.},
-           giveni={N\bibinitperiod}}}%
-        {{hash=154962bbc73c98c520be32a56fa2fbe9}{%
-           family={Sergienko},
-           familyi={S\bibinitperiod},
-           given={G.},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {North-Holland}%
-      }
-      \strng{authorbibnamehash}{cd238ea2503a30981b9bf8b7ac4938f1}
-      \strng{authornamehash}{cd238ea2503a30981b9bf8b7ac4938f1}
-      \strng{authorfullhash}{e95e3760d5b6e6549029afee56b11743}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
-      \field{labeltitlesource}{title}
-      \field{internalsortvolume}{463}
-      \field{journaltitle}{Journal of Nuclear Materials}
-      \field{langid}{english}
-      \field{month}{8}
-      \field{title}{In-situ analysis of the first wall by laser-induced breakdown spectroscopy in the TEXTOR tokamak: Dependence on the magnetic field strength}
-      \field{year}{2015}
-      \field{pages}{911\bibrangedash 914}
-      \range{pages}{4}
-      \field{volume}{463}
-      \range{volume}{1}
-      \verb{doi}
-      \verb 10.1016/J.JNUCMAT.2014.10.065
       \endverb
       \keyw{,biblioexternal,bibliofull}
     \endentry
