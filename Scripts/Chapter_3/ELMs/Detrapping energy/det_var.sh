@@ -218,7 +218,7 @@ my_model.T = F.HeatTransferProblem(
 
 CYCLE_TIME = 1 / f_ELM
 ELM_TIME = 1e-3
-max_stepsize_during_elm = 2e-5
+max_stepsize_during_elm = 5e-5
 
 class CustomStepsize(F.Stepsize):
     def adapt(self, t, nb_it, converged):  # override the adapt method
