@@ -4,29 +4,29 @@
 %%% Загрузка пакета с основными настройками %%%
 \makeatletter
 \ifnumequal{\value{draft}}{0}{% Чистовик
-\usepackage[%
-backend=biber,% движок
-bibencoding=utf8,% кодировка bib файла
-sorting=none,% настройка сортировки списка литературы
-style=gost-numeric,% стиль цитирования и библиографии (по ГОСТ)
-language=autobib,% получение языка из babel/polyglossia, default: autobib % если ставить autocite или auto, то цитаты в тексте с указанием страницы, получат указание страницы на языке оригинала
-autolang=other,% многоязычная библиография
-clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
-defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
-sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
-doi=true,% Показывать или нет ссылки на DOI
-isbn=false,% Показывать или нет ISBN, ISSN, ISRN,
-]{biblatex}[2016/09/17]
-\ltx@iffilelater{biblatex-gost.def}{2017/05/03}%
-{\toggletrue{bbx:gostbibliography}%
-\renewcommand*{\revsdnamepunct}{\addcomma}}{}
+    \usepackage[%
+        backend=biber,% движок
+        bibencoding=utf8,% кодировка bib файла
+        sorting=none,% настройка сортировки списка литературы
+        style=gost-numeric,% стиль цитирования и библиографии (по ГОСТ)
+        language=autobib,% получение языка из babel/polyglossia, default: autobib % если ставить autocite или auto, то цитаты в тексте с указанием страницы, получат указание страницы на языке оригинала
+        autolang=other,% многоязычная библиография
+        clearlang=true,% внутренний сброс поля language, если он совпадает с языком из babel/polyglossia
+        defernumbers=true,% нумерация проставляется после двух компиляций, зато позволяет выцеплять библиографию по ключевым словам и нумеровать не из большего списка
+        sortcites=true,% сортировать номера затекстовых ссылок при цитировании (если в квадратных скобках несколько ссылок, то отображаться будут отсортированно, а не абы как)
+        doi=true,% Показывать или нет ссылки на DOI
+        isbn=false,% Показывать или нет ISBN, ISSN, ISRN,
+    ]{biblatex}[2016/09/17]
+    \ltx@iffilelater{biblatex-gost.def}{2017/05/03}%
+    {\toggletrue{bbx:gostbibliography}%
+        \renewcommand*{\revsdnamepunct}{\addcomma}}{}
 }{%Черновик
-\usepackage[%
-backend=biber,% движок
-bibencoding=utf8,% кодировка bib файла
-sorting=none,% настройка сортировки списка литературы
-% defernumbers=true, % откомментируйте, если требуется правильная нумерация ссылок на литературу в режиме черновика. Замедляет сборку
-]{biblatex}[2016/09/17]%
+    \usepackage[%
+        backend=biber,% движок
+        bibencoding=utf8,% кодировка bib файла
+        sorting=none,% настройка сортировки списка литературы
+        % defernumbers=true, % откомментируйте, если требуется правильная нумерация ссылок на литературу в режиме черновика. Замедляет сборку
+    ]{biblatex}[2016/09/17]%
 }
 \makeatother
 
@@ -34,15 +34,15 @@ sorting=none,% настройка сортировки списка литера
 \boolfalse{blxmc} % setting our new boolean flag to default false
 \ifxetexorluatex
 \else
-% Исправление случая неподдержки знака номера в pdflatex
+    % Исправление случая неподдержки знака номера в pdflatex
     \DefineBibliographyStrings{russian}{number={\textnumero}}
 
-% Исправление случая отсутствия прописных букв в некоторых случаях
-% https://github.com/plk/biblatex/issues/960#issuecomment-596658282
+    % Исправление случая отсутствия прописных букв в некоторых случаях
+    % https://github.com/plk/biblatex/issues/960#issuecomment-596658282
     \ifdefmacro{\ExplSyntaxOn}{}{\usepackage{expl3}}
     \makeatletter
     \ltx@ifpackagelater{biblatex}{2020/02/23}{
-    % Assuming this version of biblatex defines MakeCapital correctly
+        % Assuming this version of biblatex defines MakeCapital correctly
     }{
         \ltx@ifpackagelater{biblatex}{2019/12/01}{
             % Assuming this version of biblatex defines MakeCapital incorrectly
@@ -55,75 +55,75 @@ sorting=none,% настройка сортировки списка литера
     \makeatother
     \ifblxmc
         \typeout{Assuming this version of biblatex defines MakeCapital
-        incorrectly}
+            incorrectly}
         \usepackage{xparse}
         \makeatletter
         \ExplSyntaxOn
         \NewDocumentCommand \blx@maketext@lowercase {m}
-          {
+        {
             \text_lowercase:n {#1}
-          }
+        }
 
         \NewDocumentCommand \blx@maketext@uppercase {m}
-          {
+        {
             \text_uppercase:n {#1}
-          }
+        }
 
         \RenewDocumentCommand \MakeCapital {m}
-          {
+        {
             \text_titlecase_first:n {#1}
-          }
+        }
         \ExplSyntaxOff
 
         \protected\def\blx@biblcstring#1#2#3{%
-          \blx@begunit
-          \blx@hyphenreset
-          \blx@bibstringsimple
-          \lowercase{\edef\blx@tempa{#3}}%
-          \ifcsundef{#2@\blx@tempa}
+            \blx@begunit
+            \blx@hyphenreset
+            \blx@bibstringsimple
+            \lowercase{\edef\blx@tempa{#3}}%
+            \ifcsundef{#2@\blx@tempa}
             {\blx@warn@nostring\blx@tempa
-             \blx@endnounit}
+                \blx@endnounit}
             {#1{\blx@maketext@lowercase{\csuse{#2@\blx@tempa}}}%
-             \blx@endunit}}
+                \blx@endunit}}
 
         \protected\def\blx@bibucstring#1#2#3{%
-          \blx@begunit
-          \blx@hyphenreset
-          \blx@bibstringsimple
-          \lowercase{\edef\blx@tempa{#3}}%
-          \ifcsundef{#2@\blx@tempa}
+            \blx@begunit
+            \blx@hyphenreset
+            \blx@bibstringsimple
+            \lowercase{\edef\blx@tempa{#3}}%
+            \ifcsundef{#2@\blx@tempa}
             {\blx@warn@nostring\blx@tempa
-             \blx@endnounit}
+                \blx@endnounit}
             {#1{\blx@maketext@uppercase{\csuse{#2@\blx@tempa}}}%
-             \blx@endunit}}
+                \blx@endunit}}
         \makeatother
     \fi
 \fi
 
 \ifsynopsis
-\ifnumgreater{\value{usefootcite}}{0}{
-    \ExecuteBibliographyOptions{autocite=footnote}
-    \newbibmacro*{cite:full}{%
-        \printtext[bibhypertarget]{%
-            \usedriver{%
-                \DeclareNameAlias{sortname}{default}%
-            }{%
-                \thefield{entrytype}%
+    \ifnumgreater{\value{usefootcite}}{0}{
+        \ExecuteBibliographyOptions{autocite=footnote}
+        \newbibmacro*{cite:full}{%
+            \printtext[bibhypertarget]{%
+                \usedriver{%
+                    \DeclareNameAlias{sortname}{default}%
+                }{%
+                    \thefield{entrytype}%
+                }%
             }%
-        }%
-        \usebibmacro{shorthandintro}%
-    }
-    \DeclareCiteCommand{\smartcite}[\mkbibfootnote]{%
-        \usebibmacro{prenote}%
-    }{%
-        \usebibmacro{citeindex}%
-        \usebibmacro{cite:full}%
-    }{%
-        \multicitedelim%
-    }{%
-        \usebibmacro{postnote}%
-    }
-}{}
+            \usebibmacro{shorthandintro}%
+        }
+        \DeclareCiteCommand{\smartcite}[\mkbibfootnote]{%
+            \usebibmacro{prenote}%
+        }{%
+            \usebibmacro{citeindex}%
+            \usebibmacro{cite:full}%
+        }{%
+            \multicitedelim%
+        }{%
+            \usebibmacro{postnote}%
+        }
+    }{}
 \fi
 
 %%% Подключение файлов bib %%%
@@ -160,8 +160,8 @@ sorting=none,% настройка сортировки списка литера
         }
         \map{% если в поле medium написано "Электронный ресурс", то устанавливаем поле media, которым пользуется biblatex, в значение eresource.
             \step[fieldsource=medium,
-            match=\regexp{Электронный\s+ресурс},
-            final]
+                match=\regexp{Электронный\s+ресурс},
+                final]
             \step[fieldset=media, fieldvalue=eresource]
             \step[fieldset=medium, null]
         }
@@ -174,9 +174,9 @@ sorting=none,% настройка сортировки списка литера
         }
         \map[overwrite]{ % переделка формата записи даты
             \step[fieldsource=urldate,
-            match=\regexp{([0-9]{2})\.([0-9]{2})\.([0-9]{4})},
-            replace={$3-$2-$1$4}, % $4 вставлен исключительно ради нормальной работы программ подсветки синтаксиса, которые некорректно обрабатывают $ в таких конструкциях
-            final]
+                match=\regexp{([0-9]{2})\.([0-9]{2})\.([0-9]{4})},
+                replace={$3-$2-$1$4}, % $4 вставлен исключительно ради нормальной работы программ подсветки синтаксиса, которые некорректно обрабатывают $ в таких конструкциях
+                final]
         }
         \map[overwrite]{ % стираем ключевые слова
             \step[fieldsource=keywords]
@@ -231,9 +231,9 @@ sorting=none,% настройка сортировки списка литера
         \map[overwrite]{ % добавляем ключевые слова, чтобы различать источники
             \step[fieldset=keywords, fieldvalue={,bibliofull},append=true]
         }
-%        \map[overwrite]{% стираем значения всех полей series
-%            \step[fieldset=series, null]
-%        }
+        %        \map[overwrite]{% стираем значения всех полей series
+        %            \step[fieldset=series, null]
+        %        }
         \map[overwrite]{% перекидываем значения полей howpublished в поля organization для типа online
             \step[typesource=online, typetarget=online, final]
             \step[fieldsource=howpublished, fieldset=organization, origfieldval]
@@ -283,52 +283,52 @@ sorting=none,% настройка сортировки списка литера
 
 \ifsynopsis
 \else
-\DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex
-    \maps{
-        \map[overwrite]{% стираем значения всех полей addendum
-            \perdatasource{biblio/author.bib}
-            \step[fieldset=addendum, null] %чтобы избавиться от информации об объёме авторских статей, в отличие от автореферата
+    \DeclareSourcemap{ %модификация bib файла перед тем, как им займётся biblatex
+        \maps{
+            \map[overwrite]{% стираем значения всех полей addendum
+                \perdatasource{biblio/author.bib}
+                \step[fieldset=addendum, null] %чтобы избавиться от информации об объёме авторских статей, в отличие от автореферата
+            }
         }
     }
-}
 \fi
 
 \ifpresentation
-% удаляем лишние поля в списке литературы презентации
-% их названия можно узнать в файле presentation.bbl
-\DeclareSourcemap{
-    \maps{
-    \map[overwrite,foreach={%
-        % {{{ Список лишних полей в презентации
-        address,%
-        chapter,%
-        edition,%
-        editor,%
-        eid,%
-        howpublished,%
-        institution,%
-        key,%
-        month,%
-        note,%
-        number,%
-        organization,%
-        pages,%
-        publisher,%
-        school,%
-        series,%
-        type,%
-        media,%
-        url,%
-        doi,%
-        location,%
-        volume,%
-        % Список лишних полей в презентации }}}
-    }]{
-        \perdatasource{biblio/author.bib}
-        \step[fieldset=$MAPLOOP,null]
+    % удаляем лишние поля в списке литературы презентации
+    % их названия можно узнать в файле presentation.bbl
+    \DeclareSourcemap{
+        \maps{
+            \map[overwrite,foreach={%
+                        % {{{ Список лишних полей в презентации
+                        address,%
+                        chapter,%
+                        edition,%
+                        editor,%
+                        eid,%
+                        howpublished,%
+                        institution,%
+                        key,%
+                        month,%
+                        note,%
+                        number,%
+                        organization,%
+                        pages,%
+                        publisher,%
+                        school,%
+                        series,%
+                        type,%
+                        media,%
+                        url,%
+                        doi,%
+                        location,%
+                        volume,%
+                        % Список лишних полей в презентации }}}
+                    }]{
+                \perdatasource{biblio/author.bib}
+                \step[fieldset=$MAPLOOP,null]
+            }
+        }
     }
-    }
-}
 \fi
 
 \defbibfilter{vakscopuswos}{%
@@ -433,14 +433,14 @@ sorting=none,% настройка сортировки списка литера
 %%% Исправление длины тире в диапазонах %%%
 % \cyrdash --- тире «русской» длины, \textendash --- en-dash
 \DefineBibliographyExtras{russian}{%
-  \protected\def\bibrangedash{%
-    \cyrdash\penalty\value{abbrvpenalty}}% almost unbreakable dash
-  \protected\def\bibdaterangesep{\bibrangedash}%тире для дат
+    \protected\def\bibrangedash{%
+        \cyrdash\penalty\value{abbrvpenalty}}% almost unbreakable dash
+    \protected\def\bibdaterangesep{\bibrangedash}%тире для дат
 }
 \DefineBibliographyExtras{english}{%
-  \protected\def\bibrangedash{%
-    \cyrdash\penalty\value{abbrvpenalty}}% almost unbreakable dash
-  \protected\def\bibdaterangesep{\bibrangedash}%тире для дат
+    \protected\def\bibrangedash{%
+        \cyrdash\penalty\value{abbrvpenalty}}% almost unbreakable dash
+    \protected\def\bibdaterangesep{\bibrangedash}%тире для дат
 }
 
 %Set higher penalty for breaking in number, dates and pages ranges
@@ -480,83 +480,83 @@ sorting=none,% настройка сортировки списка литера
 % http://tex.stackexchange.com/a/66851/79756
 %
 \makeatletter
-    \newtotcounter{citenum}
-    \defbibenvironment{counter}
-        {\setcounter{citenum}{0}\renewcommand{\blx@driver}[1]{}} % begin code: убирает весь выводимый текст
-        {} % end code
-        {\stepcounter{citenum}} % item code: cчитает "печатаемые в библиографию" источники
+\newtotcounter{citenum}
+\defbibenvironment{counter}
+{\setcounter{citenum}{0}\renewcommand{\blx@driver}[1]{}} % begin code: убирает весь выводимый текст
+{} % end code
+{\stepcounter{citenum}} % item code: cчитает "печатаемые в библиографию" источники
 
-    \newtotcounter{citeauthorvak}
-    \defbibenvironment{countauthorvak}
-        {\setcounter{citeauthorvak}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorvak}}
+\newtotcounter{citeauthorvak}
+\defbibenvironment{countauthorvak}
+{\setcounter{citeauthorvak}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorvak}}
 
-    \newtotcounter{citeauthorscopus}
-    \defbibenvironment{countauthorscopus}
-        {\setcounter{citeauthorscopus}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorscopus}}
+\newtotcounter{citeauthorscopus}
+\defbibenvironment{countauthorscopus}
+{\setcounter{citeauthorscopus}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorscopus}}
 
-    \newtotcounter{citeauthorwos}
-    \defbibenvironment{countauthorwos}
-        {\setcounter{citeauthorwos}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorwos}}
+\newtotcounter{citeauthorwos}
+\defbibenvironment{countauthorwos}
+{\setcounter{citeauthorwos}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorwos}}
 
-    \newtotcounter{citeauthorother}
-    \defbibenvironment{countauthorother}
-        {\setcounter{citeauthorother}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorother}}
+\newtotcounter{citeauthorother}
+\defbibenvironment{countauthorother}
+{\setcounter{citeauthorother}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorother}}
 
-    \newtotcounter{citeauthorconf}
-    \defbibenvironment{countauthorconf}
-        {\setcounter{citeauthorconf}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorconf}}
+\newtotcounter{citeauthorconf}
+\defbibenvironment{countauthorconf}
+{\setcounter{citeauthorconf}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorconf}}
 
-    \newtotcounter{citeauthor}
-    \defbibenvironment{countauthor}
-        {\setcounter{citeauthor}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthor}}
+\newtotcounter{citeauthor}
+\defbibenvironment{countauthor}
+{\setcounter{citeauthor}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthor}}
 
-    \newtotcounter{citeauthorvakscopuswos}
-    \defbibenvironment{countauthorvakscopuswos}
-        {\setcounter{citeauthorvakscopuswos}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorvakscopuswos}}
+\newtotcounter{citeauthorvakscopuswos}
+\defbibenvironment{countauthorvakscopuswos}
+{\setcounter{citeauthorvakscopuswos}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorvakscopuswos}}
 
-    \newtotcounter{citeauthorscopuswos}
-    \defbibenvironment{countauthorscopuswos}
-        {\setcounter{citeauthorscopuswos}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorscopuswos}}
+\newtotcounter{citeauthorscopuswos}
+\defbibenvironment{countauthorscopuswos}
+{\setcounter{citeauthorscopuswos}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorscopuswos}}
 
-    \newtotcounter{citeregistered}
-    \defbibenvironment{countregistered}
-        {\setcounter{citeregistered}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeregistered}}
+\newtotcounter{citeregistered}
+\defbibenvironment{countregistered}
+{\setcounter{citeregistered}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeregistered}}
 
-    \newtotcounter{citeauthorpatent}
-    \defbibenvironment{countauthorpatent}
-        {\setcounter{citeauthorpatent}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorpatent}}
+\newtotcounter{citeauthorpatent}
+\defbibenvironment{countauthorpatent}
+{\setcounter{citeauthorpatent}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorpatent}}
 
-    \newtotcounter{citeauthorprogram}
-    \defbibenvironment{countauthorprogram}
-        {\setcounter{citeauthorprogram}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeauthorprogram}}
+\newtotcounter{citeauthorprogram}
+\defbibenvironment{countauthorprogram}
+{\setcounter{citeauthorprogram}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeauthorprogram}}
 
-    \newtotcounter{citeexternal}
-    \defbibenvironment{countexternal}
-        {\setcounter{citeexternal}{0}\renewcommand{\blx@driver}[1]{}}
-        {}
-        {\stepcounter{citeexternal}}
+\newtotcounter{citeexternal}
+\defbibenvironment{countexternal}
+{\setcounter{citeexternal}{0}\renewcommand{\blx@driver}[1]{}}
+{}
+{\stepcounter{citeexternal}}
 \makeatother
 
 \defbibheading{nobibheading}{} % пустой заголовок, для подсчёта публикаций с помощью невидимой библиографии
@@ -603,7 +603,7 @@ sorting=none,% настройка сортировки списка литера
 \newcommand*{\insertbibliofull}{
     \printbibliography[keyword=bibliofull,section=0,title=\bibtitlefull]
     \ifnumequal{\value{draft}}{0}{
-      \printbibliography[heading=nobibheading,env=counter,keyword=bibliofull,section=0]
+        \printbibliography[heading=nobibheading,env=counter,keyword=bibliofull,section=0]
     }{}
 }
 \newcommand*{\insertbiblioauthor}{
@@ -622,9 +622,9 @@ sorting=none,% настройка сортировки списка литера
 \newcommand*{\insertbiblioauthorgrouped}{
     \section*{\bibtitleauthor}
     \ifsynopsis
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true] % Работы автора из списка ВАК (сброс нумерации)
+        \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=true] % Работы автора из списка ВАК (сброс нумерации)
     \else
-    \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false] % Работы автора из списка ВАК (сквозная нумерация)
+        \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorvak,    title=\bibtitleauthorvak,resetnumbers=false] % Работы автора из списка ВАК (сквозная нумерация)
     \fi
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorwos,    title=\bibtitleauthorwos,resetnumbers=false]% Работы автора, индексируемые Web of Science
     \printbibliography[heading=pubsubgroup, section=0, keyword=biblioauthorscopus, title=\bibtitleauthorscopus,resetnumbers=false]% Работы автора, индексируемые Scopus

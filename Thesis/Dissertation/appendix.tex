@@ -4,16 +4,18 @@
 \begin{subequations}
     \label{eq:app/W_props}
     \begin{align}
-        \rho  =             & \num{19250},                                                                   \\
+        \rho  =             & \, \num{19250}, \\
         C_p M_\mathrm{W}  = & \left\{
         \begin{alignedat}{3}
              & \num{21.868372} + \num{8.068661e-3} T - \num{3.756196e-6} T^2 +                                            \\
              & + \num{1.075862e-9} T^3 + \num{1.406637e4} T^{-2}, \quad \SI{300}{\kelvin} \leq T \leq \SI{3080}{\kelvin}, \\
              & \num{2.022} + \num{1.315e-3} T, \quad \SI{3080}{\kelvin} \textless T \leq \SI{3695}{\kelvin},
         \end{alignedat}
-        \right.                                                                                              \\
-        \kappa =            & \num{149.441} - \num{45.466e-3} T + \num{13.193e-6} T^2 - \num{1.484e-9} T^3 + \\
-                            & + \num{3.866e6} T^{-2}, \nonumber
+        \right.\raisetag{1\baselineskip}      \\
+        \begin{split}
+            \kappa = & \, \num{149.441} - \num{45.466e-3} T + \num{13.193e-6} T^2 - \num{1.484e-9} T^3 + \\
+                     & + \num{3.866e6} T^{-2},
+        \end{split}
     \end{align}
 \end{subequations}
 где \( T \) "--- температура, \si{\kelvin}; \( M_\mathrm{W}=\SI{183.84e-3}{\kilogram\per\mole} \) "--- молярная масса вольфрама.
@@ -399,11 +401,13 @@
     \end{cases}
 \end{align}
 где \( \delta(x) \) "--- дельта-функция Дирака. В особой точке выполняются свойства функции Грина краевой задачи:
-\begin{gather}
+\begin{equation}
     \label{eq:Green_problem_connect}
-    \left.G(x,y)\right\vert_{x=y^+}=\left.G(x,y)\right\vert_{x=y^-},                                                                                   \\
-    \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^+}-\left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^-}=-1.\nonumber
-\end{gather}
+    \begin{gathered}
+        \left.G(x,y)\right\vert_{x=y^+}=\left.G(x,y)\right\vert_{x=y^-}, \\
+        \left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^+}-\left.p(x)\,\dfrac{\partial G(x,y)}{\partial x}\right\vert_{x=y^-}=-1.
+    \end{gathered}
+\end{equation}
 
 Для обоих типов условий на правой границе функция Грина может быть выражена следующим образом:
 \begin{subequations}
