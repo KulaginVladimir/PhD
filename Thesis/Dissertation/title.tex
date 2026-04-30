@@ -1,10 +1,10 @@
 % Титульный лист (ГОСТ Р 7.0.11-2001, 5.1)
 \thispagestyle{empty}
 \begin{center}
-\thesisOrganization
+  \thesisOrganization
 \end{center}
 %
-\vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+
 \IfFileExists{images/logo1.pdf}{
   \begin{minipage}[b]{0.5\linewidth}
     \begin{flushleft}
@@ -14,79 +14,80 @@
   \begin{minipage}[b]{0.5\linewidth}
     \begin{flushright}
       На правах рукописи\\
-%      \textsl {УДК \thesisUdk}
+      %      \textsl {УДК \thesisUdk}
     \end{flushright}
   \end{minipage}
 }{
-\begin{flushright}
-На правах рукописи
-
-%\textsl {УДК \thesisUdk}
-\end{flushright}
+  \begin{flushright}
+    На правах рукописи\\
+    \vspace{0.0075\paperheight}
+    \includegraphics[height=1.5cm]{personal_signature.jpg}\hspace*{0.8cm}
+    %\textsl {УДК \thesisUdk}
+  \end{flushright}
 }
 %
 \vspace{0pt plus6fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 \begin{center}
-{\textbf{\thesisAuthor}}
+  {\textbf{\thesisAuthor}}
 \end{center}
 %
 \vspace{0pt plus1fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 \begin{center}
-\textbf {\large %\MakeUppercase
-\thesisTitle}
+  \textbf {\large %\MakeUppercase
+    \thesisTitle}
 
-\vspace{0pt plus2fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-{%\small
-Специальность \thesisSpecialtyNumber\ "--- <<\thesisSpecialtyTitle>>
-}
+  \vspace{0pt plus2fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+  {%\small
+    Специальность \thesisSpecialtyNumber\ "--- <<\thesisSpecialtyTitle>>
+  }
 
-\ifdefined\thesisSpecialtyTwoNumber
-{%\small
-Специальность \thesisSpecialtyTwoNumber\ "---
+  \ifdefined\thesisSpecialtyTwoNumber
+  {%\small
+    Специальность \thesisSpecialtyTwoNumber\ "---
 
-<<\thesisSpecialtyTwoTitle>>
-}
-\fi
+    <<\thesisSpecialtyTwoTitle>>
+  }
+  \fi
 
-\vspace{0pt plus2fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-ДИССЕРТАЦИЯ 
+  \vspace{0pt plus2fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+  ДИССЕРТАЦИЯ
 
-на соискание учёной степени
+  на соискание учёной степени
 
-\thesisDegree
+  \thesisDegree
 \end{center}
 %
 \vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 \begin{flushright}
-\ifdefined\supervisorTwoFio
-Научные руководители:
+  \ifdefined\supervisorTwoFio
+    Научные руководители:
 
-\supervisorRegalia
+    \supervisorRegalia
 
-\ifdefined\supervisorDead
-\framebox{\supervisorFio}
-\else
-\supervisorFio
-\fi
+    \ifdefined\supervisorDead
+      \framebox{\supervisorFio}
+    \else
+      \supervisorFio
+    \fi
 
-\supervisorTwoRegalia
+    \supervisorTwoRegalia
 
-\ifdefined\supervisorTwoDead
-\framebox{\supervisorTwoFio}
-\else
-\supervisorTwoFio
-\fi
-\else
-Научный руководитель:
+    \ifdefined\supervisorTwoDead
+      \framebox{\supervisorTwoFio}
+    \else
+      \supervisorTwoFio
+    \fi
+  \else
+    Научный руководитель:
 
-\supervisorRegalia
+    \supervisorRegalia
 
-\ifdefined\supervisorDead
-\framebox{\supervisorFio}
-\else
-\supervisorFio
-\fi
-\fi
+    \ifdefined\supervisorDead
+      \framebox{\supervisorFio}
+    \else
+      \supervisorFio
+    \fi
+  \fi
 
 \end{flushright}
 %

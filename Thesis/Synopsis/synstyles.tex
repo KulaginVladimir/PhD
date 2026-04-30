@@ -4,7 +4,7 @@
 %%% Макет страницы %%%
 % \geometry{a5paper, top=14mm, bottom=14mm, inner=18mm, outer=10mm, footskip=5mm, nomarginpar}%, showframe
 % \geometry{a4paper, top=2cm, bottom=2cm, left=3cm, right=1.5cm, footskip=1cm, nomarginpar} %, heightrounded, showframe OLD
-\geometry{a4paper, top=2cm, bottom=2cm, left=2.5cm, right=1cm, footskip=1cm, nomarginpar} %, heightrounded, showframe
+\geometry{a5paper, left=14mm, right=14mm, bottom=14mm, top=14mm, footskip=5mm, nomarginpar} %, heightrounded, showframe
 \setlength{\topskip}{0pt}   %размер дополнительного верхнего поля
 
 %%% Интервалы %%%
@@ -12,8 +12,9 @@
 %% И правит сразу и в таблицах (если со звёздочкой)
 %\DoubleSpacing*     % Двойной интервал
 %\OnehalfSpacing*    % Полуторный интервал
-\SingleSpacing      % Одинарный интервал
-%\setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+% \SingleSpacing      % Одинарный интервал
+% \setSpacing{1.42}   % Полуторный интервал, подобный Ворду (возможно, стоит включать вместе с предыдущей строкой)
+\setSpacing{1.05}
 
 %%% Выравнивание и переносы %%%
 %% http://tex.stackexchange.com/questions/241343/what-is-the-meaning-of-fussy-sloppy-emergencystretch-tolerance-hbadness
@@ -25,8 +26,10 @@
 \vfuzz \hfuzz
 %\raggedbottom
 %\sloppy                 % Избавляемся от переполнений
-\clubpenalty=10000      % Запрещаем разрыв страницы после первой строки абзаца
-\widowpenalty=10000     % Запрещаем разрыв страницы после последней строки абзаца
+\clubpenalty=1000      % Запрещаем разрыв страницы после первой строки абзаца
+\widowpenalty=1000     % Запрещаем разрыв страницы после последней строки абзаца
+\hyphenpenalty=5000
+\exhyphenpenalty=5000
 
 %%% Колонтитулы %%%
 \makeevenhead{plain}{}{}{}

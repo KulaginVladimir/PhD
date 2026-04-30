@@ -7,35 +7,35 @@
 
 \noindent%
 \begin{tabularx}{\textwidth}{@{}lXr@{}}%
-    & & \large{На правах рукописи}\\
-    \IfFileExists{images/logo}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}}  & &
+                                                                                             &  & \large{На правах рукописи} \\
+    \IfFileExists{images/logo}{\includegraphics[height=2.5cm]{logo}}{\rule[0pt]{0pt}{2.5cm}} &  &
     \ifnumequal{\value{showperssign}}{0}{%
         \rule[0pt]{0pt}{1.5cm}
     }{
-        %\includegraphics[height=1.5cm]{personal-signature.png}
-    }\\
+        \IfFileExists{images/personal_signature.jpg}{\raisebox{0.7cm}{\includegraphics[height=1.5cm]{personal_signature.jpg}}}
+    }                                                                                                                        \\
 \end{tabularx}
 
 \vspace{0pt plus1fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 \begin{center}
-\textbf {\Large \thesisAuthor}
+    \textbf {\Large \thesisAuthor}
 \end{center}
 
 \vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
 \begin{center}
-\textbf {\Large %\MakeUppercase
-\thesisTitle}
+    \textbf {\Large %\MakeUppercase
+        \thesisTitle}
 
-\vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-{\large Специальность \thesisSpecialtyNumber\ "--- \thesisSpecialtyTitle}
+    \vspace{0pt plus3fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+    {\large Специальность \thesisSpecialtyNumber\ "--- \thesisSpecialtyTitle}
 
-\ifdefined\thesisSpecialtyTwoNumber
-{\large Специальность \thesisSpecialtyTwoNumber\ "---\par <<\thesisSpecialtyTwoTitle>>}
-\fi
+    \ifdefined\thesisSpecialtyTwoNumber
+    {\large Специальность \thesisSpecialtyTwoNumber\ "---\par <<\thesisSpecialtyTwoTitle>>}
+    \fi
 
-\vspace{0pt plus1.5fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
-\Large{АВТОРЕФЕРАТ}\par
-\large{диссертации на соискание учёной степени\par \thesisDegree}
+    \vspace{0pt plus1.5fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
+    \Large{АВТОРЕФЕРАТ}\par
+    \large{диссертации на соискание учёной степени\par \thesisDegree}
 \end{center}
 
 \vspace{0pt plus4fill} %число перед fill = кратность относительно некоторого расстояния fill, кусками которого заполнены пустые места
@@ -44,93 +44,83 @@
 \newpage
 % оборотная сторона обложки
 \thispagestyle{empty}
-\noindent Работа выполнена в {\thesisInOrganization}.
+\noindent Работа выполнена в федеральном государственном автономном образовательном учреждении высшего образования <<Национальный исследовательский ядерный университет <<МИФИ>>.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent%
 \begin{tabularx}{\textwidth}{@{}lX@{}}
     \ifdefined\supervisorTwoFio
-    Научные руководители:   & \supervisorRegalia\par
-                              \ifdefined\supervisorDead
-                              \framebox{\textbf{\supervisorFio}}
-                              \else
-                              \textbf{\supervisorFio}
-                              \fi
-                              \par
-                              \vspace{0.013\paperheight}
-                              \supervisorRegalia\par
-                              \ifdefined\supervisorTwoDead
-                              \framebox{\textbf{\supervisorTwoFio}}
-                              \else
-                              \textbf{\supervisorTwoFio}
-                              \fi
-                              \vspace{0.013\paperheight}\\
-    \else
-    Научный руководитель:   & \supervisorRegalia\par
-                              \ifdefined\supervisorDead
-                              \framebox{\textbf{\supervisorFio}}
-                              \else
-                              \textbf{\supervisorFio}
-                              \fi
-                              \vspace{0.013\paperheight}\\
-    \fi
-    Официальные оппоненты:  &
-    \ifnumequal{\value{showopplead}}{0}{\vspace{13\onelineskip plus1fill}}{%
-        \textbf{\opponentOneFio,}\par
-        \opponentOneRegalia,\par
-        \opponentOneJobPlace,\par
-        \opponentOneJobPost\par
-        \vspace{0.01\paperheight}
-        \textbf{\opponentTwoFio,}\par
-        \opponentTwoRegalia,\par
-        \opponentTwoJobPlace,\par
-        \opponentTwoJobPost
-    \ifdefined\opponentThreeFio
+    Научные руководители:           & \supervisorRegalia\par
+        \ifdefined\supervisorDead
+            \framebox{\textbf{\supervisorFio}}
+        \else
+            \textbf{\supervisorFio}
+        \fi
         \par
-        \vspace{0.01\paperheight}
-        \textbf{\opponentThreeFio,}\par
-        \opponentThreeRegalia,\par
-        \opponentThreeJobPlace,\par
-        \opponentThreeJobPost
+        \vspace{0.013\paperheight}
+        \supervisorRegalia\par
+        \ifdefined\supervisorTwoDead
+            \framebox{\textbf{\supervisorTwoFio}}
+        \else
+            \textbf{\supervisorTwoFio}
+        \fi
+    \vspace{0.013\paperheight}                                    \\
+    \else
+    \textbf{Научный руководитель:}  & \textbf{\supervisorFio}\par
+        \supervisorRegalia, заведующий кафедрой физики плазмы НИЯУ МИФИ
+    \vspace{0.013\paperheight}                                    \\
     \fi
+    \textbf{Официальные оппоненты:} &
+    \ifnumequal{\value{showopplead}}{0}{\vspace{13\onelineskip plus1fill}}{%
+        \textbf{\opponentOneFio}\par
+        \opponentOneRegalia, \opponentOneJobPost \opponentOneJobPlace\par
+        \vspace{0.01\paperheight}
+        \textbf{\opponentTwoFio}\par
+        \opponentTwoRegalia, \opponentTwoJobPost \opponentTwoJobPlace
+        \ifdefined\opponentThreeFio
+            \par
+            \vspace{0.01\paperheight}
+            \textbf{\opponentThreeFio}\par \opponentThreeRegalia, \opponentThreeJobPost \opponentThreeJobPlace
+        \fi
     }%
-    \vspace{0.013\paperheight} \\
+    \vspace{0.013\paperheight}                                    \\
     \ifdefined\leadingOrganizationTitle
-    Ведущая организация:    &
-    \ifnumequal{\value{showopplead}}{0}{\vspace{6\onelineskip plus1fill}}{%
-        \leadingOrganizationTitle
-    }%
+    Ведущая организация:            &
+        \ifnumequal{\value{showopplead}}{0}{\vspace{6\onelineskip plus1fill}}{%
+            \leadingOrganizationTitle
+        }%
     \fi
 \end{tabularx}
 \vspace{0.008\paperheight plus1fill}
 
-\noindent Защита состоится \defenseDate~на~заседании диссертационного совета \defenseCouncilNumber~при \defenseCouncilTitle~по адресу: \defenseCouncilAddress.
+\noindent Защита состоится <<\underline{\hspace{0.5cm}}>> \underline{\hspace{1.5cm}} 2026~г. в XX:XX часов~на~заседании диссертационного совета \defenseCouncilNumber~федерального государственного автономного образовательного учреждения высшего образования <<Национальный исследовательский ядерный университет <<МИФИ>> (\defenseCouncilAddress).
 
 \vspace{0.008\paperheight plus1fill}
-\noindent С диссертацией можно ознакомиться в библиотеке \synopsisLibrary.
+\noindent С диссертацией можно ознакомиться в библиотеке и на сайте {\synopsisLibrary} федерального государственного автономного образовательного учреждения высшего образования <<Национальный исследовательский ядерный университет <<МИФИ>>.
+
+%\vspace{0.008\paperheight plus1fill}
+%\noindent Отзывы на автореферат в двух экземплярах, заверенные печатью учреждения, просьба направлять по адресу: \defenseCouncilAddress, ученому секретарю диссертационного совета~\defenseCouncilNumber.
 
 \vspace{0.008\paperheight plus1fill}
-\noindent Отзывы на автореферат в двух экземплярах, заверенные печатью учреждения, просьба направлять по адресу: \defenseCouncilAddress, ученому секретарю диссертационного совета~\defenseCouncilNumber.
+\noindent{Автореферат разослан <<\underline{\hspace{0.5cm}}>> \underline{\hspace{1.5cm}} 2026~г.}
 
-\vspace{0.008\paperheight plus1fill}
-\noindent{Автореферат разослан \synopsisDate.}
-
-\noindent Телефон для справок: \defenseCouncilPhone.
+% \noindent Телефон для справок: \defenseCouncilPhone.
 
 \vspace{0.008\paperheight plus1fill}
 \noindent%
 \begin{tabularx}{\textwidth}{@{}%
->{\raggedright\arraybackslash}b{18em}@{}
->{\centering\arraybackslash}X
-r
-@{}}
+    >{\raggedright\arraybackslash}m{18em}@{}
+    >{\centering\arraybackslash}X
+    >{\raggedleft\arraybackslash}m{0.30\textwidth}
+    @{}}
     Ученый секретарь\par
     диссертационного совета\par
-    \defenseCouncilNumber, \defenseSecretaryRegalia
-    &
+    \defenseCouncilNumber
+     &
     \ifnumequal{\value{showsecrsign}}{0}{}{%
         \includegraphics[width=2cm]{secretary-signature.png}%
     }%
-    &
+     &
+    \defenseSecretaryRegalia\par
     \defenseSecretaryFio
 \end{tabularx}
