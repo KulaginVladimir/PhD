@@ -256,7 +256,7 @@
         \csurf(t=0) & = c_\mathrm{s, exact}(t=0).
     \end{align}
 \end{subequations}
-Моделирование проводилось на равномерной сетке из 1000 элементов с фиксированным шагом по времени. Оценка точности численного решения (\( c_\mathrm{m, computed} \), \( c_\mathrm{s, computed} \)) проводилась на основе \( L^2 \)-нормы отклонения:
+Моделирование проводилось на равномерной сетке из 1000 узлов с фиксированным шагом по времени. Оценка точности численного решения (\( c_\mathrm{m, computed} \), \( c_\mathrm{s, computed} \)) проводилась на основе \( L^2 \)-нормы отклонения:
 \begin{subequations}
     \begin{align}
         \varepsilon_\mathrm{m} & = \sqrt{ \int\limits_\Omega \left(c_\mathrm{m, exact}-c_\mathrm{m, computed}\right)^2 d\Omega },      \\
@@ -299,11 +299,11 @@
 где \( \theta_\mathrm{H}=\csurf/n_\mathrm{s} \) "--- степень покрытия поверхности титана протием; \( \nu_\mathrm{des}^{\mathrm{H_2}}=\nu_\mathrm{des,0}^{\mathrm{H_2}} \exp(-E_\mathrm{des}/k_\mathrm{B} T) \) "--- константа скорости десорбции за счет рекомбинации двух атомов на поверхности. Константа скорости адсорбции определяется как:
 \begin{equation}
     \label{eq:ch2/nu_ads_P}
-    \nu_{\mathrm{ads}}^{\mathrm{H_2}} = \dfrac{\Phi}{\sqrt{2\pi m_\mathrm{H_2} e k_\mathrm{B} T}},
+    \nu_{\mathrm{ads}}^{\mathrm{H_2}} = \dfrac{\Phi}{\sqrt{2\pi m_\mathrm{H_2} k_\mathrm{B} T}},
 \end{equation}
-где \( \Phi = \Phi_0 \exp \left( -E_\mathrm{diss}/\kBT \right) \) "--- коэффициент прилипания; $m_\mathrm{H_2}$ "--- масса молекулы протия, \si{\kilo\gram}, $e=\SI{1.602e-19}{\joule\per\electronvolt}$ "--- элементарный заряд. Давление в камере рассчитывается из уравнения состояния идеального газа:
+где \( \Phi = \Phi_0 \exp \left( -E_\mathrm{diss}/\kBT \right) \) "--- коэффициент прилипания; $m_\mathrm{H_2}$ "--- масса молекулы протия, \si{\kilo\gram}. Давление в камере рассчитывается из уравнения состояния идеального газа:
 \begin{equation}
-    p_\mathrm{H_2} = \left( \frac{p_\mathrm{H_2,0} V_\mathrm{ch}}{e k_\mathrm{B} T} + \frac{N_0-N}{2} \right) \frac{e k_\mathrm{B} T}{V_\mathrm{ch}},
+    p_\mathrm{H_2} = \left( \frac{p_\mathrm{H_2,0} V_\mathrm{ch}}{k_\mathrm{B} T} + \frac{N_0-N}{2} \right) \frac{k_\mathrm{B} T}{V_\mathrm{ch}},
 \end{equation}
 где \( p_\mathrm{H_2,0} \) "--- начальное давление в камере, \si{\pascal}; \( V_\mathrm{ch} \) "--- объем камеры, \si{\meter\cubed}; \( N_0 \) "--- начальное число атомов протия в титане; \( N \) "--- текущее число атомов протия в титане. Содержание протия в титане определяется как интегральное число атомов на поверхности и в объеме.
 
