@@ -12,7 +12,11 @@
     \ifnumequal{\value{showperssign}}{0}{%
         \rule[0pt]{0pt}{1.5cm}
     }{
-        \IfFileExists{images/personal_signature.jpg}{\raisebox{0.7cm}{\includegraphics[height=1.5cm]{personal_signature.jpg}}}
+        \IfFileExists{images/personal_signature.jpg}{%
+            \makebox[\widthof{\manuscriptMark}][c]{%
+                \hspace{0.2cm}\raisebox{1cm}{\includegraphics[width=2.3cm]{personal_signature.jpg}}%
+            }%
+        }{}%
     }                                                                                                                        \\
 \end{tabularx}
 
@@ -83,17 +87,17 @@
             \textbf{\opponentThreeFio}\par \opponentThreeRegalia, \opponentThreeJobPost \opponentThreeJobPlace
         \fi
     }%
-    \vspace{0.013\paperheight}                                    \\
-    \ifdefined\leadingOrganizationTitle
-    Ведущая организация:            &
-        \ifnumequal{\value{showopplead}}{0}{\vspace{6\onelineskip plus1fill}}{%
-            \leadingOrganizationTitle
-        }%
-    \fi
+    %\vspace{0.013\paperheight}                                    \\
+    %\ifdefined\leadingOrganizationTitle
+    %Ведущая организация:            &
+    %    \ifnumequal{\value{showopplead}}{0}{\vspace{6\onelineskip plus1fill}}{%
+    %        \leadingOrganizationTitle
+    %    }%
+    %\fi
 \end{tabularx}
 \vspace{0.008\paperheight plus1fill}
 
-\noindent Защита состоится <<\underline{\hspace{0.5cm}}>> \underline{\hspace{1.5cm}} 2026~г. в XX:XX часов~на~заседании диссертационного совета \defenseCouncilNumber~федерального государственного автономного образовательного учреждения высшего образования <<Национальный исследовательский ядерный университет <<МИФИ>> (\defenseCouncilAddress).
+\noindent Защита состоится 08 июля 2026~г. в 15 час. 00 мин.~на~заседании диссертационного совета \defenseCouncilNumber~федерального государственного автономного образовательного учреждения высшего образования <<Национальный исследовательский ядерный университет <<МИФИ>> (\defenseCouncilAddress).
 
 \vspace{0.008\paperheight plus1fill}
 \noindent С диссертацией можно ознакомиться в библиотеке и на сайте {\synopsisLibrary} федерального государственного автономного образовательного учреждения высшего образования <<Национальный исследовательский ядерный университет <<МИФИ>>.
@@ -118,7 +122,7 @@
     \defenseCouncilNumber
      &
     \ifnumequal{\value{showsecrsign}}{0}{}{%
-        \includegraphics[width=2cm]{secretary-signature.png}%
+        \raisebox{-0.5cm}{\hspace{-0.5cm}\includegraphics[width=2.2cm]{P_P.png}}%
     }%
      &
     \defenseSecretaryRegalia\par
